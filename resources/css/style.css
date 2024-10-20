@@ -771,64 +771,129 @@ div {
 .container {
   padding-top: 80px;
 }
-
-.spot {
+.container .caption {
+  /* 경남 함양, 장민승+정재일, 上林(Sanglim) */
+  position: absolute;
+  width: 439px;
+  height: 27px;
+  left: -63px;
+  bottom: 13px;
+  font-family: "NanumSquareNeoLight";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 27px;
+  /* identical to box height */
+  text-align: center;
+  color: #fff;
+}
+@media (min-width: 600px) {
+  .container .caption {
+    font-size: 1.5rem;
+    left: -13px;
+  }
+}
+@media (min-width: 1024px) {
+  .container .caption {
+    font-size: 1.5rem;
+    left: 20px;
+  }
+}
+.container .spot_link {
+  position: absolute;
+  bottom: 13px;
+  right: 50px;
+  width: 136px;
+  height: 49px;
+  background: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.container .spot_link:hover {
+  background: #e4e4e4; /* 호버 시 스타일 추가 */
+}
+.container .spot {
   position: relative;
   height: calc(100vh - 80px);
-  z-index: 0;
 }
-.spot .spot_video_wrap {
+.container .spot .spot_img_wrap {
   position: fixed;
   top: 80px;
   left: 0;
   width: 100%;
   height: calc(100vh - 80px);
-  z-index: 0;
 }
-.spot .spot_video_wrap .bg_video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.container .spot .spot_img_wrap .bg_img {
+  position: relative;
   width: 100%;
   height: 100%;
 }
-.spot .spot_video_wrap .bg_video video {
+.container .spot .spot_img_wrap .bg_img .bg_img2 {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.spot .spot_text_wrap {
+.container .spot .spot_text_wrap {
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   z-index: 1;
-  margin: 0 auto;
 }
-.spot .spot_text_wrap .spot_text_inner {
-  display: block;
-  margin: 0 6.14583vw;
-}
-.spot .spot_text_wrap .spot_text_inner h3 {
+.container .spot .spot_text_wrap .spot_text_inner {
   display: flex;
-  -webkit-box-orient: horizontal;
-  -wepkit-box-direction: normal;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  color: #000;
+  width: 100%;
+  padding: 0 10vw;
+}
+.container .spot .spot_text_wrap .spot_text_inner h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #fff;
   font-size: 3.125vw;
   line-height: 4.79167vw;
   font-weight: 800;
 }
-.spot .spot_text_wrap .spot_text_inner h3 .text {
-  font-family: "nanumSquareBold";
+.container .spot .spot_text_wrap .spot_text_inner h3 .text {
+  font-family: "nanumSquareNeoBold";
+  white-space: nowrap;
 }
-.spot .spot_text_wrap .spot_text_inner h3 .circle .circle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: transparent;
-  width: 350px;
-  height: 350px;
+.container .spot .spot_text_wrap .spot_text_inner h3 .circle {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+.container .spot .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 600px) {
+  .container .spot .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
+    width: 300px;
+    height: 300px;
+    top: -24px;
+    left: -24px;
+  }
+}
+@media (min-width: 1024px) {
+  .container .spot .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
+    width: 400px;
+    height: 400px;
+    top: -73px;
+    left: -73px;
+  }
 }/*# sourceMappingURL=style.css.map */
