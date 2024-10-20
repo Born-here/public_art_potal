@@ -570,6 +570,10 @@ div {
     height: 2.4rem;
   }
 }
+.wrap {
+  overflow-x: hidden;
+}
+
 .header {
   display: block;
   position: fixed;
@@ -606,7 +610,7 @@ div {
   width: 140px;
   height: 38px;
   vertical-align: top;
-  background: url(/public_art_potal/resources/images/logo.png) 0 0 no-repeat;
+  background: url(/resources/images/logo.png) 0 0 no-repeat;
   background-size: 100% auto;
 }
 .header .header_ct .btn_gnb {
@@ -818,23 +822,29 @@ div {
 .container .spot_link:hover {
   background: #e4e4e4; /* 호버 시 스타일 추가 */
 }
-.container .spot {
-  position: relative;
-  height: calc(100vh - 80px);
-}
-.container .spot .spot_img_wrap {
-  position: fixed;
-  top: 80px;
-  left: 0;
+.container .swiper .swiper-container {
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 100vh;
 }
-.container .spot .spot_img_wrap .bg_img {
+.container .swiper-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .swiper-wrapper .bg_img {
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
-.container .spot .spot_img_wrap .bg_img .bg_img2 {
+.container .swiper-wrapper .bg_img .bg_img1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -843,7 +853,53 @@ div {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.container .spot .spot_text_wrap {
+.container .swiper-wrapper .bg_img .bg_img2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .swiper-wrapper .bg_img .bg_img3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .swiper-wrapper .bg_img .autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.container .swiper-wrapper .bg_img .autoplay-progress svg {
+  --progress: 1;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+  transition: stroke-dashoffset 0.3s;
+}
+.container .swiper-wrapper .spot_text_wrap {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -851,14 +907,14 @@ div {
   width: 100%;
   z-index: 1;
 }
-.container .spot .spot_text_wrap .spot_text_inner {
+.container .swiper-wrapper .spot_text_wrap .spot_text_inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 0 10vw;
 }
-.container .spot .spot_text_wrap .spot_text_inner h3 {
+.container .swiper-wrapper .spot_text_wrap .spot_text_inner h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -868,21 +924,25 @@ div {
   line-height: 4.79167vw;
   font-weight: 800;
 }
-.container .spot .spot_text_wrap .spot_text_inner h3 .text {
+.container .swiper-wrapper .spot_text_wrap .spot_text_inner h3 .text {
   font-family: "nanumSquareNeoBold";
   white-space: nowrap;
 }
-.container .spot .spot_text_wrap .spot_text_inner h3 .circle {
-  position: relative;
+.container .swiper-wrapper .spot_text_wrap .spot_text_inner h3 .circle {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 250px;
   height: 250px;
 }
-.container .spot .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
+.container .swiper-wrapper .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
+  position: absolute;
   width: 100%;
   height: 100%;
 }
 @media (min-width: 600px) {
-  .container .spot .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
+  .container .swiper-wrapper .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
     width: 300px;
     height: 300px;
     top: -24px;
@@ -890,10 +950,24 @@ div {
   }
 }
 @media (min-width: 1024px) {
-  .container .spot .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
+  .container .swiper-wrapper .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
     width: 400px;
     height: 400px;
     top: -73px;
     left: -73px;
   }
+}
+
+.header .gnb_list_box {
+  display: none;
+  position: relative;
+  background: #f5f5f5;
+  transition: all 0.2s;
+  overflow: hidden;
+  z-index: 10;
+}
+.header .gnb_list_box .active .gnb_list_box {
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
 }/*# sourceMappingURL=style.css.map */

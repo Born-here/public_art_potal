@@ -118,82 +118,104 @@
         <button type="button" class="nav_next"></button>
       </div>
       <div id="spot" class="container">
-        <div class="spot">
-          <div class="spot_img_wrap">
-            <div class="bg_img">
-              <img src="./resources/images/bg_img2.jpg" class="bg_img2" />
+        <div class="swiper intro swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="bg_img">Slide 1</div>
+                <img src="./resources/images/bg_img2.jpg" class="bg_img1" />
+              </a>
             </div>
-            <!-- 우선 height: 100% 적용 해놓고 2번 페이지로 스크롤 할때 페이드 아웃 (dimmed) 처리 되도록,  -->
-          </div>
-          <div class="spot_text_wrap">
-            <div class="spot_text_inner">
-              <h3>
-                <span class="text">건축을 예술로,</span>
-                <span class="circle">
-                  <dotlottie-player
-                    id="lottie00"
-                    src="https://lottie.host/00afdb3f-e6fa-4912-ada6-d8437513c5bf/hswV7gB0Cm.json"
-                    background="transparent"
-                    speed="1"
-                    loop
-                    autoplay
-                  ></dotlottie-player>
-                </span>
-                <span class="text">도시를 문화로</span>
-                <!-- flex > space between -->
-              </h3>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="bg_img">Slide 2</div>
+                <img src="./resources/images/bg_img3.jpg" class="bg_img2" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="bg_img">Slide 3</div>
+                <img src="./resources/images/bg_img1.jpg" class="bg_img3" />
+              </a>
             </div>
           </div>
-          <span class="caption">경남 함양, 장민승+정재일, 上林(Sanglim)</span>
-          <a href="all" class="spot_link"><span class="text">전시 보기</span></a>
-          <!-- ::after 추가 -->
+          <!-- 우선 height: 100% 적용 해놓고 2번 페이지로 스크롤 할때 페이드 아웃 (dimmed) 처리 되도록,  -->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="autoplay-progress">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span></span>
+      </div>
+      <div class="spot_text_wrap">
+        <div class="spot_text_inner">
+          <h3>
+            <span class="text">건축을 예술로,</span>
+            <span class="circle">
+              <dotlottie-player
+                id="lottie00"
+                src="https://lottie.host/00afdb3f-e6fa-4912-ada6-d8437513c5bf/hswV7gB0Cm.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+              ></dotlottie-player>
+            </span>
+            <span class="text">도시를 문화로</span>
+            <!-- flex > space between -->
+          </h3>
         </div>
       </div>
-      <div class="content">
-        <section id="record" class="section_record">
-          <div class="record_ani_wrap">
-            <!-- 스크롤 시, 서서히 .record_img_wrap 의 투명도가 1로 되도록, -->
-            <div class="record_img_wrap__black" style="opacity: 0">
-              <!-- 스크롤 시, 서서히 record_img_inner 의 scale이 작아지도록, (예) 1.4 > 1 -->
-              <!-- .record.img00 > transform: translate 으로 값 조정 (예) 200% > -50% -->
-              <div class="record_img_inner" style="opacity: 1; transform: scale(1.4, 1.4)">
-                <div class="record__img01">
-                  <img src="/resources/images/꿈을쫓는야생마.png" alt="" />
-                </div>
-                <div class="record__img02">
-                  <img src="/resources/images/설레임-물결치는달빛.png" alt="" />
-                </div>
-                <div class="record__img03">
-                  <img src="/resources/images/숲과물.png" alt="" />
-                </div>
-                <div class="record__img04">
-                  <img src="/resources/images/언어-반영.png" alt="" />
-                </div>
-                <div class="record__img05">
-                  <img src="/resources/images/memo.png" alt="" />
-                </div>
-                <div class="record__img06">
-                  <img src="/resources/images/thefish.png" alt="" />
-                </div>
-                <div class="record__img07">
-                  <img src="/resources/images/신일월대구도.png" alt="" />
-                </div>
+      <span class="caption">경남 함양, 장민승+정재일, 上林(Sanglim)</span>
+      <a href="all" class="spot_link"><span class="text">전시 보기</span></a>
+      <!-- ::after 추가 -->
+    </div>
+
+    <div class="content">
+      <section id="record" class="section_record">
+        <div class="record_ani_wrap">
+          <!-- 스크롤 시, 서서히 .record_img_wrap 의 투명도가 1로 되도록, -->
+          <div class="record_img_wrap__black" style="opacity: 0">
+            <!-- 스크롤 시, 서서히 record_img_inner 의 scale이 작아지도록, (예) 1.4 > 1 -->
+            <!-- .record.img00 > transform: translate 으로 값 조정 (예) 200% > -50% -->
+            <div class="record_img_inner" style="opacity: 1; transform: scale(1.4, 1.4)">
+              <div class="record__img01">
+                <img src="/resources/images/꿈을쫓는야생마.png" alt="" />
               </div>
-              <div class="record_text_wrap">
-                <div class="record_text_inner" style="opacity: 1; transform: translate(0%, 50%)">
-                  <div class="title">
-                    <!-- 스크롤 시, 맨 위 .text 부터 하나씩 보여지도록, -->
-                    <p class="text">오늘도 예술로</p>
-                    <p class="text">채워지는</p>
-                    <p class="text">소중한 우리 삶의 터전</p>
-                  </div>
-                </div>
+              <div class="record__img02">
+                <img src="/resources/images/설레임-물결치는달빛.png" alt="" />
               </div>
-              <!-- 여기부터 daegustorybox 시작 -->
+              <div class="record__img03">
+                <img src="/resources/images/숲과물.png" alt="" />
+              </div>
+              <div class="record__img04">
+                <img src="/resources/images/언어-반영.png" alt="" />
+              </div>
+              <div class="record__img05">
+                <img src="/resources/images/memo.png" alt="" />
+              </div>
+              <div class="record__img06">
+                <img src="/resources/images/thefish.png" alt="" />
+              </div>
+              <div class="record__img07">
+                <img src="/resources/images/신일월대구도.png" alt="" />
+              </div>
             </div>
+            <div class="record_text_wrap">
+              <div class="record_text_inner" style="opacity: 1; transform: translate(0%, 50%)">
+                <div class="title">
+                  <!-- 스크롤 시, 맨 위 .text 부터 하나씩 보여지도록, -->
+                  <p class="text">오늘도 예술로</p>
+                  <p class="text">채워지는</p>
+                  <p class="text">소중한 우리 삶의 터전</p>
+                </div>
+              </div>
+            </div>
+            <!-- 여기부터 daegustorybox 시작 -->
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
