@@ -583,6 +583,7 @@ div {
   width: 100%;
   height: 80px;
   z-index: 100;
+  overflow: hidden;
 }
 .header .header_ct {
   position: relative;
@@ -597,6 +598,7 @@ div {
 .header .header_ct h1 {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 .header .header_ct h1 .blind {
   overflow: hidden;
@@ -932,6 +934,7 @@ div {
 
 .record_text_wrap {
   position: relative;
+  z-index: 1;
 }
 .record_text_wrap .record_text_inner {
   position: absolute;
@@ -951,6 +954,14 @@ div {
   transform: scale(0.8);
   line-height: 1.2;
   font-weight: bold;
+}
+
+.record__img_inner {
+  overflow: hidden;
+}
+
+.record__background {
+  overflow: hidden;
 }
 
 .record__img01 {
@@ -1108,4 +1119,39 @@ div {
     width: 218px;
     height: 431px;
   }
+}
+
+.video_container {
+  position: relative;
+  width: 150px;
+  height: 150px; /* 원의 크기 */
+  border-radius: 50%; /* 원형 만들기 */
+  overflow: hidden; /* 원 밖의 영역 숨기기 */
+  z-index: -1;
+  top: -177px;
+  left: 103px;
+}
+@media (min-width: 600px) {
+  .video_container {
+    width: 170px;
+    height: 170px;
+    top: -211px;
+    left: 189px;
+  }
+}
+@media (min-width: 1024px) {
+  .video_container {
+    width: 450px;
+    height: 450px;
+    top: -530px;
+    left: 465px;
+  }
+}
+
+iframe {
+  width: 200%; /* 비디오를 더 확대 */
+  height: 200%; /* 비디오를 더 확대 */
+  position: absolute;
+  top: -35%; /* 세로 방향으로 중앙에 맞춤 */
+  left: -50%; /* 가로 방향으로 중앙에 맞춤 */
 }/*# sourceMappingURL=style.css.map */
