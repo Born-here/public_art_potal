@@ -610,8 +610,9 @@ div {
 }
 .header .header_ct .logo {
   display: inline-block;
-  margin: 21px 0 0 0px;
-  width: 140px;
+  margin-left: 31px;
+  margin-top: 21px;
+  width: 200px;
   height: 38px;
   vertical-align: top;
   background: url(/resources/images/logo.png) 0 0 no-repeat;
@@ -622,7 +623,7 @@ div {
   transform: translateX(0%);
   position: absolute;
   top: 0;
-  right: 17%;
+  right: 0;
   width: 78px;
   height: 78px;
   background: #000;
@@ -941,6 +942,9 @@ div {
   top: 0;
   left: 0;
   opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .record_text_wrap .record_text_inner .title {
   position: fixed;
@@ -1121,34 +1125,37 @@ div {
   }
 }
 
-.video_container {
+.video_wrap {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+.video_wrap .video_container {
   position: relative;
   width: 150px;
   height: 150px; /* 원의 크기 */
   border-radius: 50%; /* 원형 만들기 */
   overflow: hidden; /* 원 밖의 영역 숨기기 */
   z-index: -1;
-  top: -177px;
-  left: 103px;
 }
 @media (min-width: 600px) {
-  .video_container {
+  .video_wrap .video_container {
     width: 170px;
     height: 170px;
-    top: -211px;
-    left: 189px;
   }
 }
 @media (min-width: 1024px) {
-  .video_container {
+  .video_wrap .video_container {
     width: 450px;
     height: 450px;
-    top: -530px;
-    left: 465px;
   }
 }
-
-iframe {
+.video_wrap iframe {
   width: 200%; /* 비디오를 더 확대 */
   height: 200%; /* 비디오를 더 확대 */
   position: absolute;
