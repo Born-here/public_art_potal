@@ -110,192 +110,6 @@
   }
 }
 
-.content {
-  position: relative;
-  #record {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateZ(0);
-    .record_img_inner {
-      position: relative;
-      height: 40vh;
-      overflow: hidden;
-      @include mobileMore {
-        top: 300px;
-      }
-      @include tabletMore {
-        top: 300px;
-      }
-
-      .record__background {
-        // display: block;
-        position: relative;
-        background: #000 0 0 / cover;
-        background-attachment: fixed;
-        z-index: 1;
-        &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: #000;
-          opacity: 0.2;
-        }
-      }
-      .record__img01 {
-        /* 꿈을 쫓는 야생마 */
-        position: absolute;
-        // top: 167px;
-        // left: 128px;
-        top: -100px; /* 화면 위로 100px 밖 */
-        left: -100px; /* 화면 왼쪽으로 100px 밖 */
-        width: 56px;
-        height: 48px;
-        z-index: 3;
-        opacity: 0.5;
-        border-radius: 50%;
-
-        @include mobileMore {
-          width: 97px;
-          height: 84px;
-        }
-        @include tabletMore {
-          width: 309px;
-          height: 266px;
-        }
-      }
-      .record__img02 {
-        /* 설레임 - 물결치는달빛 */
-        position: absolute;
-        // top: 31px;
-        // left: 42px;
-        top: -100px; /* 화면 위로 100px 밖 */
-        right: -100px; /* 화면 오른쪽으로 100px 밖 */
-        width: 72px;
-        height: 43px;
-        z-index: 3;
-        opacity: 0.5;
-
-        /* 설레임 - 물결치는달빛 */
-        @include mobileMore {
-          width: 149px;
-          height: 89px;
-        }
-        @include tabletMore {
-          width: 450px;
-          height: 268px;
-        }
-      }
-      .record__img03 {
-        /* 숲과 물 */
-        position: absolute;
-        width: 65px;
-        height: 67px;
-        // top: 189px;
-        // left: 220px;
-        bottom: -100px; /* 화면 아래로 100px 밖 */
-        left: -100px; /* 화면 왼쪽으로 100px 밖 */
-        z-index: 3;
-        opacity: 0.7;
-        @include mobileMore {
-          width: 103px;
-          height: 106px;
-        }
-        @include tabletMore {
-          width: 273px;
-          height: 282px;
-        }
-      }
-      .record__img04 {
-        /* 언어-반영 */
-        position: absolute;
-        width: 29px;
-        // height: 88px;
-        // top: 0;
-        bottom: -100px; /* 화면 아래로 100px 밖 */
-        right: -100px; /* 화면 오른쪽으로 100px 밖 */
-        left: 230px;
-        z-index: 3;
-        opacity: 0.7;
-        @include mobileMore {
-          width: 48px;
-          height: 149px;
-        }
-        @include tabletMore {
-          width: 95px;
-          height: 297px;
-        }
-      }
-      .record__img05 {
-        /* MEMO */
-        position: absolute;
-        width: 81px;
-        height: 39px;
-        // top: 217px;
-        // left: 0;
-        top: 50%; /* 화면 세로의 중간에서 시작 */
-        left: -100px; /* 화면 왼쪽으로 100px 밖 */
-        z-index: 3;
-        opacity: 0.7;
-        @include mobileMore {
-          width: 141px;
-          height: 68px;
-        }
-        @include tabletMore {
-          width: 313px;
-          height: 152px;
-        }
-      }
-      .record__img06 {
-        /* The Fish */
-        position: absolute;
-        width: 50px;
-        height: 74px;
-        // right: 34px;
-        // top: 39px;
-        top: 50%; /* 화면 세로의 중간에서 시작 */
-        right: -100px; /* 화면 오른쪽으로 100px 밖 */
-        z-index: 3;
-        opacity: 0.7;
-        @include mobileMore {
-          width: 107px;
-          height: 160px;
-        }
-        @include tabletMore {
-          width: 270px;
-          height: 403px;
-        }
-      }
-      .record__img07 {
-        /* 신일월대구도 */
-        position: absolute;
-        width: 81px;
-        height: 160px;
-        // right: 0;
-        // top: 233px;
-        bottom: -100px; /* 화면 아래로 100px 밖 */
-        right: -100px; /* 화면 오른쪽으로 100px 밖 */
-        z-index: 3;
-        opacity: 0.7;
-        @include mobileMore {
-          width: 117px;
-          height: 232px;
-        }
-        @include tabletMore {
-          width: 218px;
-          height: 431px;
-        }
-      }
-    }
-  }
-}
-
 .record_text_wrap {
   position: relative;
 
@@ -319,5 +133,128 @@
       line-height: 1.2;
       font-weight: bold;
     }
+  }
+}
+
+.record__img01 {
+  /* 꿈을 쫓는 야생마 */
+  position: absolute;
+  top: -100px; /* 화면 위로 100px 밖 */
+  left: -100px; /* 화면 왼쪽으로 100px 밖 */
+  width: 56px;
+  height: 48px;
+  z-index: 3;
+  opacity: 0.5;
+  border-radius: 50%;
+  @include mobileMore {
+    width: 97px;
+    height: 84px;
+  }
+  @include tabletMore {
+    width: 309px;
+    height: 266px;
+  }
+}
+.record__img02 {
+  /* 설레임 - 물결치는달빛 */
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 72px;
+  height: 43px;
+  z-index: 3;
+  @include mobileMore {
+    width: 149px;
+    height: 89px;
+  }
+  @include tabletMore {
+    width: 450px;
+    height: 268px;
+  }
+}
+.record__img03 {
+  /* 숲과 물 */
+  position: absolute;
+  width: 65px;
+  height: 67px;
+  bottom: -100px;
+  left: -100px;
+  z-index: 3;
+  @include mobileMore {
+    width: 103px;
+    height: 106px;
+  }
+  @include tabletMore {
+    width: 273px;
+    height: 282px;
+  }
+}
+.record__img04 {
+  /* 언어-반영 */
+  position: absolute;
+  width: 29px;
+  bottom: -100px;
+  right: -100px;
+  left: 230px;
+  z-index: 3;
+  @include mobileMore {
+    width: 48px;
+    height: 149px;
+  }
+  @include tabletMore {
+    width: 95px;
+    height: 297px;
+  }
+}
+.record__img05 {
+  /* MEMO */
+  position: absolute;
+  width: 81px;
+  height: 39px;
+  top: 50%;
+  left: -100px;
+  z-index: 3;
+  @include mobileMore {
+    width: 141px;
+    height: 68px;
+  }
+  @include tabletMore {
+    width: 313px;
+    height: 152px;
+  }
+}
+.record__img06 {
+  /* The Fish */
+  position: absolute;
+  width: 50px;
+  height: 74px;
+  top: 50%;
+  right: -100px;
+  z-index: 3;
+  @include mobileMore {
+    width: 107px;
+    height: 160px;
+  }
+  @include tabletMore {
+    width: 270px;
+    height: 403px;
+  }
+}
+.record__img07 {
+  /* 신일월대구도 */
+  position: absolute;
+  width: 81px;
+  height: 160px;
+  bottom: -100px;
+  right: -100px;
+  z-index: 3;
+  opacity: 0.7;
+  @include mobileMore {
+    width: 117px;
+    height: 232px;
+  }
+  @include tabletMore {
+    width: 218px;
+    height: 431px;
   }
 }
