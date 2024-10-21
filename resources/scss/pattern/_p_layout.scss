@@ -40,8 +40,9 @@
 
     .logo {
       display: inline-block;
-      margin: 21px 0 0 0px;
-      width: 140px;
+      margin-left: 31px;
+      margin-top: 21px;
+      width: 200px;
       height: 38px;
       vertical-align: top;
       background: url(/resources/images/logo.png) 0 0 no-repeat;
@@ -52,7 +53,7 @@
       transform: translateX(0%);
       position: absolute;
       top: 0;
-      right: 17%;
+      right: 0;
       width: 78px;
       height: 78px;
       background: #000;
