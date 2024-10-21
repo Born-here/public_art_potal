@@ -15,19 +15,21 @@
 // });
 
 $(document).ready(function () {
-  var swiper = new Swiper('.swiper.intro.swiper-container', {
+  var swiper = new Swiper('.swiper_container', {
     spaceBetween: 30,
     centeredSlides: true,
     loop: true,
-    observer: true,
-    observeParents: true,
     autoplay: {
-      delay: 1500,
+      delay: 2500,
       disableOnInteraction: false,
     },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 });

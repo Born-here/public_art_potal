@@ -16,6 +16,7 @@
   // overflow-x: hidden;
   .header_ct {
     position: relative;
+    width: 100%;
     height: 78px;
     border-bottom: 2px solid $gray-5;
     background: $white;
@@ -23,6 +24,7 @@
     overflow: hidden;
     z-index: 20;
     h1 {
+      width: 100%;
       position: relative;
       .blind {
         overflow: hidden;
@@ -45,10 +47,10 @@
     }
     .btn_gnb {
       display: flex;
-      transform: translateX(-100%);
-      position: relative;
-      top: -59px;
-      left: 100%;
+      transform: translateX(0%);
+      position: absolute;
+      top: 0;
+      right: 17%;
       width: 78px;
       height: 78px;
       background: #000;
@@ -210,56 +212,6 @@
     }
   }
 }
-#spot {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  .swiper .intro {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    .swiper-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      overflow: hidden;
-      width: 100%;
-      height: 100vh;
-      position: relative;
-      .swiper-wrapper {
-        display: flex;
-        transition-timing-function: ease;
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        // object-fit: cover;
-        .swiper-slide {
-          display: flex;
-          position: relative;
-          width: 100%;
-          height: 100%;
-          .bg_img1,
-          .bg_img2,
-          .bg_img3 {
-            // overflow: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 1000;
-            visibility: visible;
-            // display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-      }
-    }
-  }
-}
 
 .header {
   .gnb_list_box {
@@ -277,111 +229,23 @@
   }
 }
 
-.spot_text_wrap {
+.spot_link {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  z-index: 2;
-  text-align: center;
-  // height: 10vh;
-  .spot_text_inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 10vw;
-    color: $white;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // height: 100%;
-    // padding: 0 10vw;
-    // flex-direction: row;
-    // position: relative;
-    h3 {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      font-size: 3.125vw;
-      line-height: 4.79167vw;
-      font-weight: 800;
-      .text {
-        font-family: 'nanumSquareNeoBold';
-        white-space: nowrap;
-      }
-      .circle {
-        // position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 250px;
-        height: 250px;
-        #lottie00 {
-          width: 100%;
-          height: 100%;
-
-          @include mobileMore {
-            width: 300px;
-            height: 300px;
-            top: -24px;
-            left: -24px;
-          }
-
-          @include tabletMore {
-            width: 400px;
-            height: 400px;
-            top: -73px;
-            left: -73px;
-          }
-        }
-      }
-    }
-  }
-  .caption {
-    /* 경남 함양, 장민승+정재일, 上林(Sanglim) */
-    position: absolute;
-    width: 439px;
-    height: 27px;
-    left: -63px;
-    bottom: 13px;
-    font-family: 'NanumSquareNeoLight';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.3rem;
-    line-height: 27px;
-    /* identical to box height */
-    text-align: center;
-    color: $white;
-    @include mobileMore {
-      font-size: 1.5rem;
-      left: -13px;
-    }
-    @include tabletMore {
-      font-size: 1.5rem;
-      left: 20px;
-    }
-  }
-  .spot_link {
-    position: absolute;
-    bottom: 13px;
-    right: 50px;
-    width: 136px;
-    height: 49px;
-    background: $white;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #000;
-    font-size: 1.3rem;
-    font-weight: 700;
-    &:hover {
-      background: $gray-20; /* 호버 시 스타일 추가 */
-    }
+  bottom: 13px;
+  right: 50px;
+  width: 136px;
+  height: 49px;
+  background: $white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 700;
+  &:hover {
+    background: $gray-20; /* 호버 시 스타일 추가 */
   }
 }
 

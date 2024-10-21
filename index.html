@@ -115,7 +115,53 @@
         </ul>
         <button type="button" class="nav_next"></button>
       </div>
+
       <div id="spot" class="container">
+        <div class="swiper swiper_container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="bg_img"><img src="./resources/images/bg_img2.jpg" class="bg_img1" /></div>
+
+                <div class="caption_wrap">
+                  <span class="caption">경남 함양, 장민승+정재일, 上林(Sanglim)</span>
+                  <!-- <a href="#" class="spot_link"><button class="text">전시 보기</button></a> -->
+                </div>
+                <!--  -->
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="bg_img"><img src="./resources/images/bg_img3.jpg" class="bg_img2" /></div>
+
+                <div class="caption_wrap">
+                  <span class="caption">강원 철원, 배영환, 빛의 사원</span>
+                  <!-- <a href="#" class="spot_link"><button class="text">전시 보기</button></a> -->
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="bg_img"><img src="./resources/images/bg_img1.jpg" class="bg_img3" /></div>
+
+                <div class="caption_wrap">
+                  <span class="caption">충남 계룡, 김영나, Dot Dot Dice</span>
+                  <!-- <a href="#" class="spot_link"><button class="text">전시 보기</button></a> -->
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <div class="bg_img"><img src="./resources/images/bg_img4.jpg" class="bg_img4" /></div>
+
+                <div class="caption_wrap">
+                  <span class="caption">부산 사하, 천대광, 아트파빌리언</span>
+                  <!-- <a href="#" class="spot_link"><button class="text">전시 보기</button></a> -->
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="spot_text_wrap">
           <div class="spot_text_inner">
             <h3>
@@ -132,31 +178,6 @@
               </span>
               <span class="text">도시를 문화로</span>
             </h3>
-          </div>
-          <span class="caption">경남 함양, 장민승+정재일, 上林(Sanglim)</span>
-          <a href="#" class="spot_link"><span class="text">전시 보기</span></a>
-        </div>
-        <div class="swiper intro swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a href="#">
-                <!-- <div class="bg_img">Slide 1</div> -->
-                <img src="./resources/images/bg_img2.jpg" class="bg_img1" />
-                <!--  -->
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#">
-                <!-- <div class="bg_img">Slide 2</div> -->
-                <img src="./resources/images/bg_img3.jpg" class="bg_img2" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#">
-                <!-- <div class="bg_img">Slide 3</div> -->
-                <img src="./resources/images/bg_img1.jpg" class="bg_img3" />
-              </a>
-            </div>
           </div>
         </div>
 
@@ -175,34 +196,35 @@
       <section id="record" class="section_record">
         <div class="record_ani_wrap">
           <!-- 스크롤 시, 서서히 .record_img_wrap 의 투명도가 1로 되도록, -->
-          <div class="record_img_wrap__black" style="opacity: 0">
+          <div class="record_img_wrap__black">
             <!-- 스크롤 시, 서서히 record_img_inner 의 scale이 작아지도록, (예) 1.4 > 1 -->
             <!-- .record.img00 > transform: translate 으로 값 조정 (예) 200% > -50% -->
             <div class="record_img_inner" style="opacity: 1; transform: scale(1.4, 1.4)">
+              <div class="record__background"></div>
               <div class="record__img01">
-                <!-- <img src="/resources/images/꿈을쫓는야생마.png" alt="" /> -->
+                <img src="/resources/images/꿈을쫓는야생마.png" alt="꿈을쫓는야생마" />
               </div>
               <div class="record__img02">
-                <!-- <img src="/resources/images/설레임-물결치는달빛.png" alt="" /> -->
+                <img src="/resources/images/설레임-물결치는달빛.png" alt="물결치는달빛" />
               </div>
               <div class="record__img03">
-                <!-- <img src="/resources/images/숲과물.png" alt="" /> -->
+                <img src="/resources/images/숲과물.png" alt="숲과물" />
               </div>
               <div class="record__img04">
-                <!-- <img src="/resources/images/언어-반영.png" alt="" /> -->
+                <img src="/resources/images/언어-반영.png" alt="언어-반영" />
               </div>
               <div class="record__img05">
-                <!-- <img src="/resources/images/memo.png" alt="" /> -->
+                <img src="/resources/images/memo.png" alt="메모" />
               </div>
               <div class="record__img06">
-                <!-- <img src="/resources/images/thefish.png" alt="" /> -->
+                <img src="/resources/images/thefish.png" alt="thefish" />
               </div>
               <div class="record__img07">
-                <!-- <img src="/resources/images/신일월대구도.png" alt="" /> -->
+                <img src="/resources/images/신일월대구도.png" alt="신일월대구도" />
               </div>
             </div>
             <div class="record_text_wrap">
-              <div class="record_text_inner" style="opacity: 1; transform: translate(0%, 50%)">
+              <div class="record_text_inner">
                 <div class="title">
                   <!-- 스크롤 시, 맨 위 .text 부터 하나씩 보여지도록, -->
                   <p class="text">오늘도 예술로</p>
@@ -211,6 +233,7 @@
                 </div>
               </div>
             </div>
+
             <!-- 여기부터 daegustorybox 시작 -->
           </div>
         </div>

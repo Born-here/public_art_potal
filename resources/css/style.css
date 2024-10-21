@@ -586,6 +586,7 @@ div {
 }
 .header .header_ct {
   position: relative;
+  width: 100%;
   height: 78px;
   border-bottom: 2px solid #f8f8f8;
   background: #fff;
@@ -594,6 +595,7 @@ div {
   z-index: 20;
 }
 .header .header_ct h1 {
+  width: 100%;
   position: relative;
 }
 .header .header_ct h1 .blind {
@@ -615,10 +617,10 @@ div {
 }
 .header .header_ct .btn_gnb {
   display: flex;
-  transform: translateX(-100%);
-  position: relative;
-  top: -59px;
-  left: 100%;
+  transform: translateX(0%);
+  position: absolute;
+  top: 0;
+  right: 17%;
   width: 78px;
   height: 78px;
   background: #000;
@@ -772,54 +774,6 @@ div {
   border-radius: 50%;
 }
 
-#spot {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-#spot .swiper .intro {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-#spot .swiper .intro .swiper-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-#spot .swiper .intro .swiper-container .swiper-wrapper {
-  display: flex;
-  transition-timing-function: ease;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-#spot .swiper .intro .swiper-container .swiper-wrapper .swiper-slide {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-#spot .swiper .intro .swiper-container .swiper-wrapper .swiper-slide .bg_img1,
-#spot .swiper .intro .swiper-container .swiper-wrapper .swiper-slide .bg_img2,
-#spot .swiper .intro .swiper-container .swiper-wrapper .swiper-slide .bg_img3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 1000;
-  visibility: visible;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
 .header .gnb_list_box {
   display: none;
   position: relative;
@@ -834,92 +788,7 @@ div {
   transform: translateY(0);
 }
 
-.spot_text_wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  z-index: 2;
-  text-align: center;
-}
-.spot_text_wrap .spot_text_inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 10vw;
-  color: #fff;
-}
-.spot_text_wrap .spot_text_inner h3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  font-size: 3.125vw;
-  line-height: 4.79167vw;
-  font-weight: 800;
-}
-.spot_text_wrap .spot_text_inner h3 .text {
-  font-family: "nanumSquareNeoBold";
-  white-space: nowrap;
-}
-.spot_text_wrap .spot_text_inner h3 .circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: 250px;
-}
-.spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
-  width: 100%;
-  height: 100%;
-}
-@media (min-width: 600px) {
-  .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
-    width: 300px;
-    height: 300px;
-    top: -24px;
-    left: -24px;
-  }
-}
-@media (min-width: 1024px) {
-  .spot_text_wrap .spot_text_inner h3 .circle #lottie00 {
-    width: 400px;
-    height: 400px;
-    top: -73px;
-    left: -73px;
-  }
-}
-.spot_text_wrap .caption {
-  /* 경남 함양, 장민승+정재일, 上林(Sanglim) */
-  position: absolute;
-  width: 439px;
-  height: 27px;
-  left: -63px;
-  bottom: 13px;
-  font-family: "NanumSquareNeoLight";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.3rem;
-  line-height: 27px;
-  /* identical to box height */
-  text-align: center;
-  color: #fff;
-}
-@media (min-width: 600px) {
-  .spot_text_wrap .caption {
-    font-size: 1.5rem;
-    left: -13px;
-  }
-}
-@media (min-width: 1024px) {
-  .spot_text_wrap .caption {
-    font-size: 1.5rem;
-    left: 20px;
-  }
-}
-.spot_text_wrap .spot_link {
+.spot_link {
   position: absolute;
   bottom: 13px;
   right: 50px;
@@ -935,10 +804,351 @@ div {
   font-size: 1.3rem;
   font-weight: 700;
 }
-.spot_text_wrap .spot_link:hover {
+.spot_link:hover {
   background: #e4e4e4; /* 호버 시 스타일 추가 */
 }
 
 .gnb_list_box {
   display: none;
+}
+
+.swiper .swiper-slide {
+  position: relative;
+}
+.swiper .swiper-slide.swiper-slide-active .caption_wrap {
+  opacity: 1;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.swiper .swiper-slide .caption_wrap {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 100%;
+  max-width: none;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.swiper .swiper-slide .caption_wrap .caption {
+  position: absolute;
+  width: 439px;
+  height: 27px;
+  left: -63px;
+  bottom: 13px;
+  font-family: "NanumSquareNeoLight";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 27px;
+  /* identical to box height */
+  text-align: center;
+  color: #fff;
+}
+@media (min-width: 600px) {
+  .swiper .swiper-slide .caption_wrap .caption {
+    font-size: 1.5rem;
+    left: -13px;
+  }
+}
+@media (min-width: 1024px) {
+  .swiper .swiper-slide .caption_wrap .caption {
+    font-size: 1.5rem;
+    left: 20px;
+  }
+}
+.swiper img {
+  height: 60vh;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 600px) {
+  .swiper img {
+    height: 100vh;
+  }
+}
+@media (min-width: 1024px) {
+  .swiper img {
+    width: 100%;
+  }
+}
+
+.spot_text_wrap {
+  width: 90%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+}
+@media (min-width: 1024px) {
+  .spot_text_wrap {
+    transform: translate(-50%, -20%);
+  }
+}
+@media (min-width: 600px) {
+  .spot_text_wrap {
+    top: 40%;
+  }
+}
+.spot_text_wrap h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  color: #fff;
+  font-family: "nanumSquareNeoBold";
+  font-size: 3.125vw;
+  line-height: 4.79167vw;
+  font-weight: 800;
+}
+@media (min-width: 600px) {
+  .spot_text_wrap h3 {
+    font-size: 4vw;
+    line-height: 4.79167vw;
+    font-weight: 900;
+  }
+}
+
+.record__background {
+  position: relative;
+  background: #000 0 0/cover;
+  background-attachment: fixed;
+  z-index: 1;
+}
+.record__background::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.2;
+}
+
+.content {
+  position: relative;
+}
+.content #record {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0);
+}
+.content #record .record_img_inner {
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  .content #record .record_img_inner {
+    top: 300px;
+  }
+}
+@media (min-width: 1024px) {
+  .content #record .record_img_inner {
+    top: 300px;
+  }
+}
+.content #record .record_img_inner .record__background {
+  position: relative;
+  background: #000 0 0/cover;
+  background-attachment: fixed;
+  z-index: 1;
+}
+.content #record .record_img_inner .record__background::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.2;
+}
+.content #record .record_img_inner .record__img01 {
+  /* 꿈을 쫓는 야생마 */
+  position: absolute;
+  top: -100px; /* 화면 위로 100px 밖 */
+  left: -100px; /* 화면 왼쪽으로 100px 밖 */
+  width: 56px;
+  height: 48px;
+  z-index: 3;
+  opacity: 0.5;
+  border-radius: 50%;
+}
+@media (min-width: 600px) {
+  .content #record .record_img_inner .record__img01 {
+    width: 97px;
+    height: 84px;
+  }
+}
+@media (min-width: 1024px) {
+  .content #record .record_img_inner .record__img01 {
+    width: 309px;
+    height: 266px;
+  }
+}
+.content #record .record_img_inner .record__img02 {
+  /* 설레임 - 물결치는달빛 */
+  position: absolute;
+  top: -100px; /* 화면 위로 100px 밖 */
+  right: -100px; /* 화면 오른쪽으로 100px 밖 */
+  width: 72px;
+  height: 43px;
+  z-index: 3;
+  opacity: 0.5;
+  /* 설레임 - 물결치는달빛 */
+}
+@media (min-width: 600px) {
+  .content #record .record_img_inner .record__img02 {
+    width: 149px;
+    height: 89px;
+  }
+}
+@media (min-width: 1024px) {
+  .content #record .record_img_inner .record__img02 {
+    width: 450px;
+    height: 268px;
+  }
+}
+.content #record .record_img_inner .record__img03 {
+  /* 숲과 물 */
+  position: absolute;
+  width: 65px;
+  height: 67px;
+  bottom: -100px; /* 화면 아래로 100px 밖 */
+  left: -100px; /* 화면 왼쪽으로 100px 밖 */
+  z-index: 3;
+  opacity: 0.7;
+}
+@media (min-width: 600px) {
+  .content #record .record_img_inner .record__img03 {
+    width: 103px;
+    height: 106px;
+  }
+}
+@media (min-width: 1024px) {
+  .content #record .record_img_inner .record__img03 {
+    width: 273px;
+    height: 282px;
+  }
+}
+.content #record .record_img_inner .record__img04 {
+  /* 언어-반영 */
+  position: absolute;
+  width: 29px;
+  bottom: -100px; /* 화면 아래로 100px 밖 */
+  right: -100px; /* 화면 오른쪽으로 100px 밖 */
+  left: 230px;
+  z-index: 3;
+  opacity: 0.7;
+}
+@media (min-width: 600px) {
+  .content #record .record_img_inner .record__img04 {
+    width: 48px;
+    height: 149px;
+  }
+}
+@media (min-width: 1024px) {
+  .content #record .record_img_inner .record__img04 {
+    width: 95px;
+    height: 297px;
+  }
+}
+.content #record .record_img_inner .record__img05 {
+  /* MEMO */
+  position: absolute;
+  width: 81px;
+  height: 39px;
+  top: 50%; /* 화면 세로의 중간에서 시작 */
+  left: -100px; /* 화면 왼쪽으로 100px 밖 */
+  z-index: 3;
+  opacity: 0.7;
+}
+@media (min-width: 600px) {
+  .content #record .record_img_inner .record__img05 {
+    width: 141px;
+    height: 68px;
+  }
+}
+@media (min-width: 1024px) {
+  .content #record .record_img_inner .record__img05 {
+    width: 313px;
+    height: 152px;
+  }
+}
+.content #record .record_img_inner .record__img06 {
+  /* The Fish */
+  position: absolute;
+  width: 50px;
+  height: 74px;
+  top: 50%; /* 화면 세로의 중간에서 시작 */
+  right: -100px; /* 화면 오른쪽으로 100px 밖 */
+  z-index: 3;
+  opacity: 0.7;
+}
+@media (min-width: 600px) {
+  .content #record .record_img_inner .record__img06 {
+    width: 107px;
+    height: 160px;
+  }
+}
+@media (min-width: 1024px) {
+  .content #record .record_img_inner .record__img06 {
+    width: 270px;
+    height: 403px;
+  }
+}
+.content #record .record_img_inner .record__img07 {
+  /* 신일월대구도 */
+  position: absolute;
+  width: 81px;
+  height: 160px;
+  bottom: -100px; /* 화면 아래로 100px 밖 */
+  right: -100px; /* 화면 오른쪽으로 100px 밖 */
+  z-index: 3;
+  opacity: 0.7;
+}
+@media (min-width: 600px) {
+  .content #record .record_img_inner .record__img07 {
+    width: 117px;
+    height: 232px;
+  }
+}
+@media (min-width: 1024px) {
+  .content #record .record_img_inner .record__img07 {
+    width: 218px;
+    height: 431px;
+  }
+}
+
+.record_text_wrap {
+  position: relative;
+}
+.record_text_wrap .record_text_inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+.record_text_wrap .record_text_inner .title {
+  position: fixed;
+  font-size: 3em;
+  color: #000;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  top: -200px; /* 초기 위치 조정 */
+  transform: scale(0.8);
+  line-height: 1.2;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
