@@ -859,11 +859,14 @@ div {
     left: 20px;
   }
 }
-.swiper .swiper-slide .bg_img {
+.swiper .swiper-slide .bg_img img {
   position: relative;
   z-index: 1;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.swiper .swiper-slide .bg_img::before {
+.swiper .swiper-slide .bg_img img::before {
   content: "";
   position: absolute;
   top: 0;
@@ -872,24 +875,6 @@ div {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
-}
-
-img {
-  height: 100vh;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-@media (min-width: 600px) {
-  img {
-    height: 100vh;
-  }
-}
-@media (min-width: 1024px) {
-  img {
-    width: 100%;
-  }
 }
 
 .spot_text_wrap {
@@ -977,11 +962,9 @@ img {
 .record__img_inner {
   overflow: hidden;
 }
-
 .record__background {
   overflow: hidden;
 }
-
 .record__img01 {
   /* 꿈을 쫓는 야생마 */
   position: absolute;
@@ -1005,7 +988,6 @@ img {
     height: 266px;
   }
 }
-
 .record__img02 {
   /* 설레임 - 물결치는달빛 */
   position: absolute;
@@ -1027,7 +1009,6 @@ img {
     height: 268px;
   }
 }
-
 .record__img03 {
   /* 숲과 물 */
   position: absolute;
@@ -1049,7 +1030,6 @@ img {
     height: 282px;
   }
 }
-
 .record__img04 {
   /* 언어-반영 */
   position: absolute;
@@ -1071,7 +1051,6 @@ img {
     height: 297px;
   }
 }
-
 .record__img05 {
   /* MEMO */
   position: absolute;
@@ -1093,7 +1072,6 @@ img {
     height: 152px;
   }
 }
-
 .record__img06 {
   /* The Fish */
   position: absolute;
@@ -1115,7 +1093,6 @@ img {
     height: 403px;
   }
 }
-
 .record__img07 {
   /* 신일월대구도 */
   position: absolute;
@@ -1137,4 +1114,8 @@ img {
     width: 218px;
     height: 431px;
   }
+}
+.record__img img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=style.css.map */
