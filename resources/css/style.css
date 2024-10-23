@@ -570,11 +570,6 @@ div {
     height: 2.4rem;
   }
 }
-.wrap {
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
 .header {
   display: block;
   position: fixed;
@@ -816,6 +811,11 @@ div {
   display: none;
 }
 
+.wrap {
+  height: 100%;
+  background-color: #000;
+}
+
 .swiper .swiper-slide.swiper-slide-active .caption_wrap {
   opacity: 1;
   top: 90%;
@@ -926,6 +926,11 @@ div {
     width: 500px;
     height: 500px;
   }
+}
+
+.container_wrap {
+  position: relative;
+  height: 737px;
 }
 
 .spot_text_wrap {
@@ -1169,4 +1174,24 @@ div {
 .record__img img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.swiper {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: block;
+  height: 300px;
+  background-color: #e4e4e4;
+}
+
+#record {
+  opacity: 0;
+  transition: opacity 3s ease, transform 3s ease;
+  transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  -ms-transform: translateY(50px);
 }/*# sourceMappingURL=style.css.map */

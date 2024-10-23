@@ -72,6 +72,24 @@ $(document).ready(function () {
   });
 });
 
+document.addEventListener('scroll', function () {
+  const recordSection = document.querySelector('#record');
+  const swiperSection = document.querySelector('.swiper');
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+
+  // 스크롤 위치가 첫 번째 섹션의 끝에 도달하면 첫 번째 섹션의 내용이 사라지도록
+  if (scrollPosition > windowHeight * 0.8) {
+    swiperSection.style.opacity = '0'; // 첫 번째 섹션을 서서히 사라지게 함
+    recordSection.style.opacity = '1'; // 두 번째 섹션이 나타남
+    recordSection.style.transform = 'translateY(0)'; // 두 번째 섹션이 자리잡음
+  } else {
+    swiperSection.style.opacity = '1'; // 첫 번째 섹션 유지
+    // recordSection.style.opacity = '0'; // 두 번째 섹션 숨김
+    recordSection.style.transform = 'translateY(50px)'; // 서서히 아래에서 올라옴
+  }
+});
+
 window.addEventListener('scroll', function () {
   // 스크롤 이벤트 리스너 등록
   const inner = document.querySelector('.content #record .record_img_inner'); // 모든 섹션을 가져옴

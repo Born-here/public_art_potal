@@ -1,3 +1,10 @@
+.wrap {
+  // overflow-x: hidden;
+  // overflow-y: hidden;
+  height: 100%;
+  background-color: #000;
+}
+
 .swiper {
   .swiper-slide {
     &.swiper-slide-active {
@@ -101,6 +108,10 @@
       height: 500px;
     }
   }
+}
+.container_wrap {
+  position: relative;
+  height: 737px;
 }
 .spot_text_wrap {
   width: 90%;
@@ -314,4 +325,23 @@
   &__img img {
     object-fit: contain;
   }
+}
+
+.swiper {
+  height: 100vh; // 첫 번째 섹션이 화면 전체를 차지
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: block;
+  height: 300px;
+  background-color: $gray-20;
+}
+#record {
+  opacity: 0; // 처음에는 안 보이게 설정
+  transition: opacity 3s ease, transform 3s ease; // 천천히 나타나는 효과
+  transform: translateY(50px); // 살짝 아래에서 올라오게 설정
+  -webkit-transform: translateY(50px); // Safari와 같은 브라우저
+  -ms-transform: translateY(50px); // IE를 위한 프리픽스
 }
