@@ -4,17 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>public art potal</title>
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="페이지 제목" />
-    <meta property="og:description" content="페이지 설명" />
-    <meta property="og:image" content="http://www.mysite.com/article/article1_featured_image.jpg" />
-    <meta property="og:url" content="http://www.mysite.com/article/article1.html" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="페이지 제목" />
-    <meta name="twitter:description" content="페이지 설명" />
-    <meta name="twitter:image" content="http://www.mysite.com/article/article1.html" />
-    <meta name="twitter:domain" content="사이트 명" />
-    <link rel="shortcut icon" href="http://www.mysite.com/favicon.ico" />
     <!-- css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link
@@ -187,9 +176,8 @@
           </div>
         </div>
         <div class="swiper-pagination"></div>
-    </div>
-            <!-- 우선 height: 100% 적용 해놓고 2번 페이지로 스크롤 할때 페이드 아웃 (dimmed) 처리 되도록,  -->
-
+        <!-- </div> -->
+        <!-- 우선 height: 100% 적용 해놓고 2번 페이지로 스크롤 할때 페이드 아웃 (dimmed) 처리 되도록,  -->
 
         <div class="content">
           <section id="record" class="section_record">
@@ -200,7 +188,6 @@
                 <!-- .record.img00 > transform: translate 으로 값 조정 (예) 200% > -50% -->
 
                 <div class="record_img_inner record" style="opacity: 1; transform: scale(1.4, 1.4)">
-                  
                   <div class="record__background"></div>
                   <div class="record__img record__img01">
                     <img src="./resources/images/꿈을쫓는야생마.png" alt="꿈을쫓는야생마" />
@@ -243,15 +230,9 @@
           <!-- <footer id="footer">footer</footer> -->
         </div>
       </main>
-      <div include-html="./layout/footer.html"></div>
-    
-
-    <!-- <span class="caption">경남 함양, 장민승+정재일, 上林(Sanglim)</span>
-      <a href="all" class="spot_link"><span class="text">전시 보기</span></a>
-      <!-- ::after 추가 -->
-    <!-- </div> -->
-
-    <script defer src="./resources/js/pattern/ui-swiper-script.js"></script>
-    <script defer src="./resources/js/pattern/ui-pattern-script.js"></script>
+      <footer id="footer" include-html="./layout/footer.html"></footer>
+      <script defer src="./resources/js/pattern/ui-swiper-script.js"></script>
+      <script defer src="./resources/js/pattern/ui-pattern-script.js"></script>
+    </div>
   </body>
 </html>

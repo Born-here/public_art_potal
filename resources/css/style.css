@@ -572,6 +572,7 @@ div {
 }
 .wrap {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .header {
