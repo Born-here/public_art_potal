@@ -43,9 +43,11 @@
       }
     }
 
-    .bg_img {
+    .bg_img img {
       position: relative;
       z-index: 1;
+      height: 100vh;
+      object-fit: cover;
       &::before {
         content: '';
         position: absolute;
@@ -61,18 +63,18 @@
   }
 }
 
-img {
-  height: 100vh;
-  object-position: 50% 50%;
-  object-fit: cover;
+// img {
+//   // height: 100vh;
+//   object-position: 50% 50%;
+//   object-fit: cover;
 
-  @include mobileMore {
-    height: 100vh;
-  }
-  @include tabletMore {
-    width: 100%;
-  }
-}
+//   @include mobileMore {
+//     height: 100vh;
+//   }
+//   @include tabletMore {
+//     width: 100%;
+//   }
+// }
 // .swiper_container {
 //   position: relative;
 // }
@@ -156,131 +158,136 @@ img {
   }
 }
 
-.record__img_inner {
-  overflow: hidden;
-}
-.record__background {
-  overflow: hidden;
-}
-.record__img01 {
-  /* 꿈을 쫓는 야생마 */
-  position: absolute;
-  top: -100px; /* 화면 위로 100px 밖 */
-  left: -100px; /* 화면 왼쪽으로 100px 밖 */
-  width: 56px;
-  height: 48px;
-  z-index: 3;
-  opacity: 0.5;
-  border-radius: 50%;
-  @include mobileMore {
-    width: 97px;
-    height: 84px;
+.record {
+  &__img_inner {
+    overflow: hidden;
   }
-  @include tabletMore {
-    width: 309px;
-    height: 266px;
+  &__background {
+    overflow: hidden;
   }
-}
-.record__img02 {
-  /* 설레임 - 물결치는달빛 */
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 72px;
-  height: 43px;
-  z-index: 3;
-  @include mobileMore {
-    width: 149px;
-    height: 89px;
+  &__img01 {
+    /* 꿈을 쫓는 야생마 */
+    position: absolute;
+    top: -100px; /* 화면 위로 100px 밖 */
+    left: -100px; /* 화면 왼쪽으로 100px 밖 */
+    width: 56px;
+    height: 48px;
+    z-index: 3;
+    opacity: 0.5;
+    border-radius: 50%;
+    @include mobileMore {
+      width: 97px;
+      height: 84px;
+    }
+    @include tabletMore {
+      width: 309px;
+      height: 266px;
+    }
   }
-  @include tabletMore {
-    width: 450px;
-    height: 268px;
+  &__img02 {
+    /* 설레임 - 물결치는달빛 */
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 72px;
+    height: 43px;
+    z-index: 3;
+    @include mobileMore {
+      width: 149px;
+      height: 89px;
+    }
+    @include tabletMore {
+      width: 450px;
+      height: 268px;
+    }
   }
-}
-.record__img03 {
-  /* 숲과 물 */
-  position: absolute;
-  width: 65px;
-  height: 67px;
-  bottom: -100px;
-  left: -100px;
-  z-index: 3;
-  @include mobileMore {
-    width: 103px;
-    height: 106px;
+  &__img03 {
+    /* 숲과 물 */
+    position: absolute;
+    width: 65px;
+    height: 67px;
+    bottom: -100px;
+    left: -100px;
+    z-index: 3;
+    @include mobileMore {
+      width: 103px;
+      height: 106px;
+    }
+    @include tabletMore {
+      width: 273px;
+      height: 282px;
+    }
   }
-  @include tabletMore {
-    width: 273px;
-    height: 282px;
+  &__img04 {
+    /* 언어-반영 */
+    position: absolute;
+    width: 29px;
+    bottom: -100px;
+    right: -100px;
+    left: 230px;
+    z-index: 3;
+    @include mobileMore {
+      width: 48px;
+      height: 149px;
+    }
+    @include tabletMore {
+      width: 95px;
+      height: 297px;
+    }
   }
-}
-.record__img04 {
-  /* 언어-반영 */
-  position: absolute;
-  width: 29px;
-  bottom: -100px;
-  right: -100px;
-  left: 230px;
-  z-index: 3;
-  @include mobileMore {
-    width: 48px;
-    height: 149px;
+  &__img05 {
+    /* MEMO */
+    position: absolute;
+    width: 81px;
+    height: 39px;
+    top: 50%;
+    left: -100px;
+    z-index: 3;
+    @include mobileMore {
+      width: 141px;
+      height: 68px;
+    }
+    @include tabletMore {
+      width: 313px;
+      height: 152px;
+    }
   }
-  @include tabletMore {
-    width: 95px;
-    height: 297px;
+  &__img06 {
+    /* The Fish */
+    position: absolute;
+    width: 50px;
+    height: 74px;
+    top: 50%;
+    right: -100px;
+    z-index: 3;
+    @include mobileMore {
+      width: 107px;
+      height: 160px;
+    }
+    @include tabletMore {
+      width: 270px;
+      height: 403px;
+    }
   }
-}
-.record__img05 {
-  /* MEMO */
-  position: absolute;
-  width: 81px;
-  height: 39px;
-  top: 50%;
-  left: -100px;
-  z-index: 3;
-  @include mobileMore {
-    width: 141px;
-    height: 68px;
-  }
-  @include tabletMore {
-    width: 313px;
-    height: 152px;
-  }
-}
-.record__img06 {
-  /* The Fish */
-  position: absolute;
-  width: 50px;
-  height: 74px;
-  top: 50%;
-  right: -100px;
-  z-index: 3;
-  @include mobileMore {
-    width: 107px;
+  &__img07 {
+    /* 신일월대구도 */
+    position: absolute;
+    width: 81px;
     height: 160px;
+    bottom: -100px;
+    right: -100px;
+    z-index: 3;
+    opacity: 0.7;
+    @include mobileMore {
+      width: 117px;
+      height: 232px;
+    }
+    @include tabletMore {
+      width: 218px;
+      height: 431px;
+    }
   }
-  @include tabletMore {
-    width: 270px;
-    height: 403px;
-  }
-}
-.record__img07 {
-  /* 신일월대구도 */
-  position: absolute;
-  width: 81px;
-  height: 160px;
-  bottom: -100px;
-  right: -100px;
-  z-index: 3;
-  opacity: 0.7;
-  @include mobileMore {
-    width: 117px;
-    height: 232px;
-  }
-  @include tabletMore {
-    width: 218px;
-    height: 431px;
+  &__img img {
+    object-fit: contain;
   }
 }
