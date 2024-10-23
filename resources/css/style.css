@@ -862,6 +862,7 @@ div {
 .swiper .swiper-slide .bg_img img {
   position: relative;
   z-index: 1;
+  width: 100%;
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
