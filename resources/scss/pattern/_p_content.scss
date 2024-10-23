@@ -44,7 +44,7 @@
   }
 
   img {
-    height: 60vh;
+    height: 100vh;
     object-position: 50% 50%;
     object-fit: cover;
 
@@ -63,15 +63,15 @@
 .spot_text_wrap {
   width: 90%;
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   z-index: 2;
-  @include tabletMore {
-    transform: translate(-50%, -20%);
-  }
   @include mobileMore {
-    top: 40%;
+    top: 50%;
+  }
+  @include tabletMore {
+    transform: translate(-50%, -40%);
   }
 
   h3 {
@@ -266,48 +266,5 @@
   @include tabletMore {
     width: 218px;
     height: 431px;
-  }
-}
-
-.video_wrap {
-  width: 100%;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: -1;
-
-  .video_container {
-    position: relative;
-    width: 150px;
-    height: 150px; /* 원의 크기 */
-    border-radius: 50%; /* 원형 만들기 */
-    overflow: hidden; /* 원 밖의 영역 숨기기 */
-    z-index: -1;
-    // top: -177px;
-    // left: 103px;
-    @include mobileMore {
-      width: 170px;
-      height: 170px;
-      // top: -211px;
-      // left: 189px;
-    }
-    @include tabletMore {
-      width: 450px;
-      height: 450px;
-
-      // top: -530px;
-      // left: 465px;
-    }
-  }
-
-  iframe {
-    width: 200%; /* 비디오를 더 확대 */
-    height: 200%; /* 비디오를 더 확대 */
-    position: absolute;
-    top: -35%; /* 세로 방향으로 중앙에 맞춤 */
-    left: -50%; /* 가로 방향으로 중앙에 맞춤 */
   }
 }
