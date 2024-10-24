@@ -265,6 +265,8 @@ document.addEventListener('scroll', function () {
   const windowHeight = window.innerHeight;
 
   const scrollFactor = Math.min(scrollPosition / windowHeight, 1); // 0에서 1까지 스크롤 비율 계산
+  const screenWidth = window.innerWidth;
+  let positions;
 
   // 이미지 요소들
   const img01 = document.querySelector('.record__img01 img');
@@ -273,35 +275,76 @@ document.addEventListener('scroll', function () {
   const img04 = document.querySelector('.record__img04 img');
   const img05 = document.querySelector('.record__img05 img');
   const img06 = document.querySelector('.record__img06 img');
-  const img07 = document.querySelector('.record__img07 img');
+  // const img07 = document.querySelector('.record__img07 img');
 
   // 이미지가 이동할 초기와 최종 좌표 정의
-  const positions = [
-    { img: img01, startX: -100, startY: -100, finalX: 18, finalY: 71 },
-    { img: img02, startX: 100, startY: -100, finalX: 32, finalY: 0 },
-    { img: img03, startX: -100, startY: 100, finalX: -105, finalY: 0 },
-    { img: img04, startX: 100, startY: 100, finalX: -117, finalY: 14 },
-    { img: img05, startX: -100, startY: 100, finalX: 32, finalY: 27 },
-    { img: img06, startX: 100, startY: 100, finalX: -30, finalY: 28 },
-    { img: img07, startX: 100, startY: 100, finalX: -115, finalY: 58 },
-  ];
+  if (screenWidth <= 599) {
+    positions = [
+      { img: img01, startX: 0, startY: 0, finalX: 100, finalY: 200 },
+      { img: img02, startX: 0, startY: -43, finalX: 50, finalY: 150 },
+      { img: img03, startX: 248, startY: 300, finalX: -20, finalY: -60 },
+      { img: img04, startX: 302, startY: 0, finalX: 20, finalY: 40 },
+      { img: img05, startX: 0, startY: 233, finalX: 100, finalY: 30 },
+      { img: img06, startX: 418, startY: 138, finalX: -57, finalY: -20 },
+      // { img: img07, startX: 366, startY: 516, finalX: -250, finalY: -320 },
+    ];
+  }
+  // mobileMore 화면 크기 (600px 이상 1024px 이하)
+  else if (screenWidth >= 600 && screenWidth <= 1024) {
+    positions = [
+      { img: img01, startX: 0, startY: 0, finalX: 150, finalY: 250 },
+      { img: img02, startX: 0, startY: -63, finalX: 70, finalY: 200 },
+      { img: img03, startX: 298, startY: 350, finalX: -30, finalY: -80 },
+      { img: img04, startX: 352, startY: 0, finalX: 30, finalY: 60 },
+      { img: img05, startX: 0, startY: 283, finalX: 150, finalY: 50 },
+      { img: img06, startX: 468, startY: 188, finalX: -87, finalY: -40 },
+    ];
+  }
 
+  // tabletMore 화면 크기 (1025px 이상)
+  else if (screenWidth >= 1025) {
+    positions = [
+      { img: img01, startX: 0, startY: 0, finalX: 200, finalY: 300 },
+      { img: img02, startX: 0, startY: -83, finalX: 90, finalY: 250 },
+      { img: img03, startX: 348, startY: 400, finalX: -40, finalY: -100 },
+      { img: img04, startX: 402, startY: 0, finalX: 40, finalY: 80 },
+      { img: img05, startX: 0, startY: 333, finalX: 200, finalY: 70 },
+      { img: img06, startX: 518, startY: 238, finalX: -117, finalY: -60 },
+    ];
+  }
   // 모든 이미지를 스크롤에 따라 이동 및 opacity 조정
   positions.forEach(({ img, startX, startY, finalX, finalY }) => {
     if (img) {
       // 이동 계산 (각 이미지가 점차적으로 이동)
       const currentX = (finalX - startX) * scrollFactor + startX;
       const currentY = (finalY - startY) * scrollFactor + startY;
-      img.style.transform = `translate(${currentX}px, ${currentY}px)`;
+      const scaleValue = 1 - scrollFactor * 0.2;
+      img.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scaleValue})`;
 
       // opacity 변화 (스크롤 비율에 따라 점차 나타남)
       if (scrollFactor > 0.3) {
-        img.style.opacity = 1;
+        img.style.opacity = 1 - (scrollFactor - 0.3) * (1 / 0.7); // 0.3 이후 점차 흐려짐
       } else if (scrollFactor >= 0.1 && scrollFactor <= 0.3) {
-        img.style.opacity = (scrollFactor - 0.1) / 0.2;
+        img.style.opacity = (scrollFactor - 0.1) / 0.2; // 0.1에서 0.3까지 점차 나타남
       } else {
         img.style.opacity = 0;
       }
     }
   });
+  // img07에 대한 별도 처리 (opacity 및 scale 적용 안 함)
+  const img07 = document.querySelector('.record__img07 img');
+  if (img07) {
+    const startX = 400;
+    const startY = 700;
+    const finalX = -120;
+    const finalY = -100;
+
+    // 이동 계산 (오직 위치만 변경)
+    const currentX = (finalX - startX) * scrollFactor + startX;
+    const currentY = (finalY - startY) * scrollFactor + startY;
+
+    img07.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    img07.style.opacity = 0.7 + scrollFactor * 0.3;
+    // img07의 opacity와 scale은 변경하지 않음
+  }
 });
