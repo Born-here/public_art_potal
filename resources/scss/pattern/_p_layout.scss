@@ -123,6 +123,7 @@
 }
 
 .navigation {
+  display: none;
   position: fixed;
   // position: relative;
   top: 50%;
@@ -209,6 +210,9 @@
         border-radius: 50%;
       }
     }
+  }
+  @include tabletMore {
+    display: block;
   }
 }
 

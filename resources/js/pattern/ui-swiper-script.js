@@ -4,7 +4,7 @@ $(document).ready(function () {
     centeredSlides: true,
     loop: true,
     autoplay: {
-      delay: 1500,
+      delay: 99999,
       disableOnInteraction: false,
     },
     pagination: {
