@@ -226,6 +226,7 @@
       z-index: 2;
       bottom: 300px;
       left: 0; /* 초기 위치 조정 */
+      transform: translate(0, -50%);
       // transform: scale(0); /*초기 크기 조정 */
       line-height: 13.88889vw;
       letter-spacing: -0.2px;
@@ -360,12 +361,13 @@
 //   position: relative;
 //   height: 100vh;
 // }
+
 .daegu_story_inner {
-  position: absolute;
+  position: static;
   top: 50%;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: -4;
   max-width: 1360px;
   margin: 0 auto;
   padding-bottom: 5.72917vw;
@@ -374,4 +376,40 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: center;
+
+  .video-container {
+    position: fixed;
+    width: 100%;
+    height: 80vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); // opacity 0.5의 검정색 배경
+      pointer-events: none; // dimmed 레이어가 클릭되지 않도록 설정
+    }
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%) scale(1.5); /* 확대를 통해 검은 여백 제거 */
+    pointer-events: none;
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 55) 80%,
+      // 검은색으로 시작 (완전히 보임)
+      rgba(0, 0, 0, 1) 100% // 투명해짐 (완전히 사라짐)
+    );
+  }
 }
