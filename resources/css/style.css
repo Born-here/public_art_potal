@@ -82,6 +82,7 @@ label,
   font-family: inherit;
   line-height: 1.5;
   letter-spacing: inherit;
+  position: relative;
 }
 
 pre {
@@ -604,14 +605,14 @@ div {
   height: 1px;
   margin: -1px;
 }
-.header .header_ct .logo {
+.header .header_ct #logo {
   display: inline-block;
   margin-left: 31px;
   margin-top: 21px;
   width: 200px;
   height: 38px;
   vertical-align: top;
-  background: url(/public_art_potal/resources/images/logo.png) 0 0 no-repeat;
+  background: url(https://www.publicart.or.kr/img/logo.png) 0 0 no-repeat;
   background-size: 100% auto;
 }
 .header .header_ct .btn_gnb {
@@ -819,7 +820,7 @@ div {
 
 .wrap {
   height: 100%;
-  background-color: #000;
+  background: #000;
 }
 
 .swiper .swiper-slide.swiper-slide-active .caption_wrap {
@@ -873,6 +874,8 @@ div {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
+          mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
 }
 .swiper .swiper-slide .bg_img img::before {
   content: "";
@@ -887,6 +890,8 @@ div {
 
 .container {
   position: relative;
+  height: 2500px;
+  background: #000;
 }
 .container .circle_bg {
   position: absolute;
@@ -917,7 +922,7 @@ div {
 }
 .container .circle_bg01 {
   opacity: 0.5;
-  width: 500px;
+  width: 100vw;
   height: 500px;
 }
 @media (min-width: 600px) {
@@ -948,6 +953,7 @@ div {
   position: relative;
   height: 100vh;
   transition: opacity 1s ease;
+  background: #000;
 }
 
 .spot_text_wrap {
@@ -975,23 +981,17 @@ div {
   align-items: center;
   white-space: nowrap;
   color: #fff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
   font-family: "nanumSquareNeoBold";
-  font-size: 3.5rem;
-  line-height: 4.2vw;
+  font-size: 7vw;
+  line-height: 15vw;
   font-weight: 800;
-}
-@media (min-width: 600px) {
-  .spot_text_wrap h3 {
-    font-size: 5vw;
-    line-height: 4.79167vw;
-  }
 }
 @media (min-width: 1024px) {
   .spot_text_wrap h3 {
     flex-direction: row;
-    font-family: "nanumSquareNeoBold";
-    font-size: 3.7vw;
+    justify-content: space-between;
+    font-size: 5vw;
   }
 }
 
@@ -1019,37 +1019,39 @@ div {
 }
 .record_text_wrap .record_text_inner {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   opacity: 1;
   width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .record_text_wrap .record_text_inner .title {
   position: fixed;
-  font-size: 5.20833vw;
+  font-size: 8.88889vw;
   color: #fff;
   text-align: center;
   width: 100%;
   height: auto;
   z-index: 2;
-  bottom: 200px;
+  bottom: 300px;
   left: 0; /* 초기 위치 조정 */
-  line-height: 7.8125vw;
+  line-height: 13.88889vw;
   letter-spacing: -0.2px;
   font-family: "nanumSquareNeo";
-  font-weight: 900;
+  font-weight: 800;
 }
 @media (min-width: 600px) {
   .record_text_wrap .record_text_inner .title {
-    bottom: 300px;
+    bottom: 150px;
   }
 }
 @media (min-width: 1024px) {
   .record_text_wrap .record_text_inner .title {
-    bottom: 270px;
+    bottom: 100px;
   }
 }
 .record_text_wrap .record_text_inner .title .text01,
@@ -1057,194 +1059,6 @@ div {
 .record_text_wrap .record_text_inner .title .text03 {
   opacity: 0;
   transition: opacity 1s;
-}
-
-.record__img {
-  position: absolute;
-  opacity: 0;
-  transition: transform 1.5s ease, opacity 1.5s ease;
-}
-.record__img_inner {
-  overflow: hidden;
-}
-.record__background {
-  overflow: hidden;
-}
-.record__img01 {
-  /* 꿈을 쫓는 야생마 */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 56px;
-  height: 48px;
-  z-index: 3;
-  opacity: 0.5;
-  border-radius: 50%;
-}
-@media (min-width: 600px) {
-  .record__img01 {
-    width: 97px;
-    height: 84px;
-  }
-}
-@media (min-width: 1024px) {
-  .record__img01 {
-    top: -83px;
-    left: 0;
-    width: 309px;
-    height: 266px;
-  }
-}
-.record__img02 {
-  /* 설레임 - 물결치는달빛 */
-  position: absolute;
-  top: -43px;
-  left: 0;
-  width: 72px;
-  height: 43px;
-  z-index: 3;
-}
-@media (min-width: 600px) {
-  .record__img02 {
-    top: -63px;
-    left: 0;
-    width: 149px;
-    height: 89px;
-  }
-}
-@media (min-width: 1024px) {
-  .record__img02 {
-    top: -83px;
-    left: 0;
-    width: 450px;
-    height: 268px;
-  }
-}
-.record__img03 {
-  /* 숲과 물 */
-  position: absolute;
-  width: 65px;
-  height: 67px;
-  top: 300px;
-  left: 248px;
-  z-index: 3;
-}
-@media (min-width: 600px) {
-  .record__img03 {
-    top: 350px;
-    left: 298px;
-    width: 103px;
-    height: 106px;
-  }
-}
-@media (min-width: 1024px) {
-  .record__img03 {
-    top: 400px;
-    left: 348px;
-    width: 273px;
-    height: 282px;
-  }
-}
-.record__img04 {
-  /* 언어-반영 */
-  position: absolute;
-  width: 29px;
-  top: 0;
-  left: 302px;
-  z-index: 3;
-}
-@media (min-width: 600px) {
-  .record__img04 {
-    top: 0;
-    left: 352px;
-    width: 48px;
-    height: 149px;
-  }
-}
-@media (min-width: 1024px) {
-  .record__img04 {
-    top: 0;
-    left: 402px;
-    width: 95px;
-    height: 297px;
-  }
-}
-.record__img05 {
-  /* MEMO */
-  position: absolute;
-  width: 81px;
-  height: 39px;
-  top: 233px;
-  left: 0;
-  z-index: 3;
-}
-@media (min-width: 600px) {
-  .record__img05 {
-    top: 283px;
-    left: 0;
-    width: 141px;
-    height: 68px;
-  }
-}
-@media (min-width: 1024px) {
-  .record__img05 {
-    top: 333px;
-    left: 0;
-    width: 313px;
-    height: 152px;
-  }
-}
-.record__img06 {
-  /* The Fish */
-  position: absolute;
-  width: 50px;
-  height: 74px;
-  top: 138px;
-  left: 418px;
-  z-index: 3;
-}
-@media (min-width: 600px) {
-  .record__img06 {
-    top: 188px;
-    left: 468px;
-    width: 107px;
-    height: 160px;
-  }
-}
-@media (min-width: 1024px) {
-  .record__img06 {
-    top: 238px;
-    left: 518px;
-    width: 270px;
-    height: 403px;
-  }
-}
-.record__img07 {
-  /* 신일월대구도 */
-  position: absolute;
-  width: 81px;
-  height: 160px;
-  top: 516px;
-  left: 366px;
-  z-index: 3;
-  opacity: 0.7;
-}
-@media (min-width: 600px) {
-  .record__img07 {
-    width: 117px;
-    height: 232px;
-  }
-}
-@media (min-width: 1024px) {
-  .record__img07 {
-    width: 218px;
-    height: 431px;
-  }
-}
-.record__img img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  z-index: 4;
 }
 
 .swiper {
@@ -1255,40 +1069,76 @@ div {
 }
 
 .content {
-  display: block;
-  position: absolute;
-  top: 638px;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  background-color: #000;
-  background-size: cover;
-  -webkit-mask-image: linear-gradient(to top, rgb(0, 0, 0) 95%, rgba(0, 0, 0, 0) 100%);
-          mask-image: linear-gradient(to top, rgb(0, 0, 0) 95%, rgba(0, 0, 0, 0) 100%);
-}
-@media (min-width: 600px) {
-  .content {
-    top: 638px;
-  }
-}
-@media (min-width: 1024px) {
-  .content {
-    top: 823px;
-  }
-}
-
-#record {
-  opacity: 0;
-  transition: opacity 3s ease, transform 3s ease;
-  transform: translateY(50px);
-  -webkit-transform: translateY(50px);
-  -ms-transform: translateY(50px);
-}
-
-.record_img_wrap__black {
   position: relative;
+  z-index: 10;
+  background-color: #000;
+}
+
+.section_record .record_img_wrap {
+  position: fixed;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: calc(100vh - 62px);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.section_record {
+  position: relative;
+  max-width: 100%;
   height: 100vh;
+}
+.section_record .record_ani_wrap .record_img_inner {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 62px);
+  transition: transform 0.5s ease;
+}
+.section_record .record_img_wrap.black {
+  background-color: #000;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+.section_record .record.img01 {
+  width: 16.094vw;
+  height: 13.854vw;
+  left: 31.302vw;
+  top: 29.583vw;
+}
+.section_record .record.img02 {
+  width: 23.438vw;
+  height: 13.958vw;
+  left: 5.365vw;
+  top: 5.417vw;
+}
+.section_record .record.img03 {
+  width: 14.219vw;
+  height: 14.688vw;
+  left: 60.208vw;
+  top: 33.177vw;
+}
+.section_record .record.img04 {
+  width: 4.948vw;
+  height: 15.469vw;
+  left: 62.344vw;
+  top: 4.635vw;
+}
+.section_record .record.img05 {
+  width: 16.302vw;
+  height: 7.917vw;
+  left: 0.241vw;
+  top: 41.458vw;
+}
+.section_record .record.img06 {
+  width: 14.063vw;
+  height: 20.99vw;
+  left: 79.479vw;
+  top: 5.417vw;
+}
+.section_record .record {
+  position: absolute;
 }
 
 .daegu_story_inner {

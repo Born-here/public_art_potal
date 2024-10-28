@@ -71,6 +71,9 @@ label,
   font-family: inherit;
   line-height: $line-height-base;
   letter-spacing: inherit;
+  // height: 100%;
+  position: relative;
+  // height, position 추가 //
 }
 pre {
   font-family: inherit;

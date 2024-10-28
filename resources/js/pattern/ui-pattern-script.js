@@ -1,3 +1,6 @@
+window.history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 // document.addEventListener('DOMContentLoaded', function () {
 //   // lottie00라는 id를 가진 애니메이션을 선택
 //   const lottieAnimation = document.getElementById('lottie00');
@@ -80,17 +83,17 @@ document.addEventListener('scroll', function () {
   const windowHeight = window.innerHeight;
 
   // 스크롤 위치가 첫 번째 섹션의 끝에 도달하면 첫 번째 섹션의 내용이 사라지도록
-  if (scrollPosition > windowHeight * 0.5) {
-    swiperSection.style.opacity = '0'; // 첫 번째 섹션을 서서히 사라지게 함
-    contSection.style.opacity = '0'; // 첫 번째 섹션을 서서히 사라지게 함
-    recordSection.style.opacity = '1'; // 두 번째 섹션이 나타남
-    recordSection.style.transform = 'translateY(0)'; // 두 번째 섹션이 자리잡음
-  } else {
-    swiperSection.style.opacity = '1'; // 첫 번째 섹션 유지
-    contSection.style.opacity = '1'; // 첫 번째 섹션 유지
-    recordSection.style.opacity = '0'; // 두 번째 섹션 숨김
-    // recordSection.style.transform = 'translateY(50px)'; // 서서히 아래에서 올라옴
-  }
+  // if (scrollPosition > windowHeight * 0.5) {
+  //   swiperSection.style.opacity = '0'; // 첫 번째 섹션을 서서히 사라지게 함
+  //   contSection.style.opacity = '0'; // 첫 번째 섹션을 서서히 사라지게 함
+  //   recordSection.style.opacity = '1'; // 두 번째 섹션이 나타남
+  //   recordSection.style.transform = 'translateY(0)'; // 두 번째 섹션이 자리잡음
+  // } else {
+  //   swiperSection.style.opacity = '1'; // 첫 번째 섹션 유지
+  //   contSection.style.opacity = '1'; // 첫 번째 섹션 유지
+  //   recordSection.style.opacity = '0'; // 두 번째 섹션 숨김
+  //   // recordSection.style.transform = 'translateY(50px)'; // 서서히 아래에서 올라옴
+  // }
 });
 
 document.addEventListener('scroll', function () {
@@ -102,13 +105,13 @@ document.addEventListener('scroll', function () {
   const windowHeight = window.innerHeight;
 
   // 스크롤 위치에 따라 각 텍스트의 opacity를 0에서 1로 변경
-  if (scrollPosition > windowHeight * 0.5) {
+  if (scrollPosition > windowHeight * 0.4) {
     text01.style.opacity = '1'; // 첫 번째 텍스트가 서서히 나타남
   } else {
     text01.style.opacity = '0';
   }
 
-  if (scrollPosition > windowHeight * 0.7) {
+  if (scrollPosition > windowHeight * 0.8) {
     text02.style.opacity = '1'; // 두 번째 텍스트가 서서히 나타남
   } else {
     text02.style.opacity = '0';
@@ -133,91 +136,31 @@ document.addEventListener('scroll', function () {
   }
 });
 
-document.addEventListener('scroll', function () {
+window.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY;
-  const windowHeight = window.innerHeight;
+  const contentStart = 500; // 스크롤 위치를 기준으로 `record_img_wrap`의 opacity가 시작될 위치
+  const scaleEnd = 1500; // 스케일 축소가 완료되는 위치
+  const recordAniWrap = document.querySelector('.record_ani_wrap');
+  const recordImgWrap = document.querySelector('.record_img_wrap.black');
+  const recordImgInner = document.querySelector('.record_img_inner');
 
-  const scrollFactor = Math.min(scrollPosition / windowHeight, 1); // 0에서 1까지 스크롤 비율 계산
-  const screenWidth = window.innerWidth;
-  let positions;
-
-  // 이미지 요소들
-  const img01 = document.querySelector('.record__img01 img');
-  const img02 = document.querySelector('.record__img02 img');
-  const img03 = document.querySelector('.record__img03 img');
-  const img04 = document.querySelector('.record__img04 img');
-  const img05 = document.querySelector('.record__img05 img');
-  const img06 = document.querySelector('.record__img06 img');
-  // const img07 = document.querySelector('.record__img07 img');
-
-  // 이미지가 이동할 초기와 최종 좌표 정의
-  if (screenWidth <= 599) {
-    positions = [
-      { img: img01, startX: 0, startY: 0, finalX: 100, finalY: 200 },
-      { img: img02, startX: 0, startY: -43, finalX: 50, finalY: 150 },
-      { img: img03, startX: 248, startY: 300, finalX: -20, finalY: -60 },
-      { img: img04, startX: 302, startY: 0, finalX: 20, finalY: 40 },
-      { img: img05, startX: 0, startY: 233, finalX: 100, finalY: 30 },
-      { img: img06, startX: 418, startY: 138, finalX: -57, finalY: -20 },
-      // { img: img07, startX: 366, startY: 516, finalX: -250, finalY: -320 },
-    ];
+  // 스크롤에 따라 `record_img_wrap`의 opacity가 0에서 1로 증가
+  if (scrollPosition > contentStart && scrollPosition < scaleEnd) {
+    const wrapOpacity = Math.min((scrollPosition - contentStart) / 500, 1);
+    recordImgWrap.style.opacity = wrapOpacity;
+  } else {
+    // 스크롤이 다시 contentStart 이하로 돌아가면 opacity를 0으로 되돌림
+    // recordImgWrap.style.opacity = 0;
+    const wrapOpacity = Math.max(1 - (contentStart - scrollPosition) / 0, 0);
+    recordImgWrap.style.opacity = wrapOpacity;
   }
-  // mobileMore 화면 크기 (600px 이상 1024px 이하)
-  else if (screenWidth >= 600 && screenWidth <= 1024) {
-    positions = [
-      { img: img01, startX: 0, startY: 0, finalX: 150, finalY: 250 },
-      { img: img02, startX: 0, startY: -63, finalX: 70, finalY: 200 },
-      { img: img03, startX: 298, startY: 350, finalX: -30, finalY: -80 },
-      { img: img04, startX: 352, startY: 0, finalX: 30, finalY: 60 },
-      { img: img05, startX: 0, startY: 283, finalX: 150, finalY: 50 },
-      { img: img06, startX: 468, startY: 188, finalX: -87, finalY: -40 },
-    ];
-  }
+  // 스크롤이 추가 진행되며 `record_img_inner`의 scale이 감소하고, `record_img_wrap`의 opacity가 다시 감소
+  if (scrollPosition >= contentStart + 1 && scrollPosition < scaleEnd) {
+    const scaleValue = Math.max(1.4 - (scrollPosition - contentStart - 500) / 500, 1);
+    const wrapOpacity = Math.max(1 - (scrollPosition - contentStart - 500) / 500, 0);
 
-  // tabletMore 화면 크기 (1025px 이상)
-  else if (screenWidth >= 1025) {
-    positions = [
-      { img: img01, startX: 0, startY: 0, finalX: 200, finalY: 300 },
-      { img: img02, startX: 0, startY: -83, finalX: 90, finalY: 250 },
-      { img: img03, startX: 348, startY: 400, finalX: -40, finalY: -100 },
-      { img: img04, startX: 402, startY: 0, finalX: 40, finalY: 80 },
-      { img: img05, startX: 0, startY: 333, finalX: 200, finalY: 70 },
-      { img: img06, startX: 518, startY: 238, finalX: -117, finalY: -60 },
-    ];
-  }
-  // 모든 이미지를 스크롤에 따라 이동 및 opacity 조정
-  positions.forEach(({ img, startX, startY, finalX, finalY }) => {
-    if (img) {
-      // 이동 계산 (각 이미지가 점차적으로 이동)
-      const currentX = (finalX - startX) * scrollFactor + startX;
-      const currentY = (finalY - startY) * scrollFactor + startY;
-      const scaleValue = scrollFactor > 0.6 ? 1 - (scrollFactor - 0.6) * 0.5 : 1;
-      img.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scaleValue})`;
-
-      // opacity 변화: 0.3 이후 나타나고, 0.6 이후 흐려짐
-      if (scrollFactor > 0.6) {
-        img.style.opacity = 1 - (scrollFactor - 0.6) * (1 / 0.4); // 0.6 이후 점차 흐려짐
-      } else if (scrollFactor >= 0.3 && scrollFactor <= 0.6) {
-        img.style.opacity = (scrollFactor - 0.3) / 0.3; // 0.3에서 0.6까지 점차 나타남
-      } else {
-        img.style.opacity = 0;
-      }
-    }
-  });
-  // img07에 대한 별도 처리 (opacity 및 scale 적용 안 함)
-  const img07 = document.querySelector('.record__img07 img');
-  if (img07) {
-    const startX = 400;
-    const startY = 700;
-    const finalX = -140;
-    const finalY = -100;
-
-    // 이동 계산 (오직 위치만 변경)
-    const currentX = (finalX - startX) * scrollFactor + startX;
-    const currentY = (finalY - startY) * scrollFactor + startY;
-
-    img07.style.transform = `translate(${currentX}px, ${currentY}px)`;
-    img07.style.opacity = 0.7 + scrollFactor * 0.3;
-    // img07의 opacity와 scale은 변경하지 않음
+    recordImgInner.style.transform = `scale(${scaleValue})`;
+    recordImgWrap.style.opacity = wrapOpacity;
+    recordAniWrap.style.opacity = wrapOpacity;
   }
 });
