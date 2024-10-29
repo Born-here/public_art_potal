@@ -36,6 +36,7 @@ gsap.to('.video-container', {
 gsap.to('.daegu_story.index01', {
   y: -5,
   ease: 'power1.inOut',
+  opacity: 0,
   scrollTrigger: {
     trigger: '.daegu_space',
     start: 'top center',
