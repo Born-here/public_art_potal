@@ -37,7 +37,6 @@
         font-weight: 700;
         font-size: 1.3rem;
         line-height: 27px;
-        /* identical to box height */
         text-align: center;
         color: $white;
         @include mobileMore {
@@ -57,12 +56,7 @@
       width: 100%;
       height: 100vh;
       object-fit: cover;
-      mask-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 55) 80%,
-        // 검은색으로 시작 (완전히 보임)
-        rgba(0, 0, 0, 0) 100% // 투명해짐 (완전히 사라짐)
-      );
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 55) 80%, rgba(0, 0, 0, 0) 100%);
 
       &::before {
         content: '';
@@ -174,7 +168,6 @@
     @include tabletMore {
       flex-direction: row;
       justify-content: space-between;
-      // font-family: 'nanumSquareNeoBold';
       font-size: 5vw;
     }
   }
@@ -210,7 +203,6 @@
     width: 100%;
     transform: translateY(-50%);
     text-align: center;
-
     // transform: translate(0%, 50%);
     display: flex;
     justify-content: center;
@@ -225,9 +217,9 @@
       height: auto;
       z-index: 2;
       bottom: 300px;
-      left: 0; /* 초기 위치 조정 */
+      left: 0;
       transform: translate(0, -50%);
-      // transform: scale(0); /*초기 크기 조정 */
+      // transform: scale(0);
       line-height: 13.88889vw;
       letter-spacing: -0.2px;
       font-family: 'nanumSquareNeo';
@@ -242,42 +234,25 @@
       .text01,
       .text02,
       .text03 {
-        opacity: 0; // 처음에는 안 보이게 설정
-        transition: opacity 1s; // 서서히 나타나게 설정
+        opacity: 0; // 처음에는 안 보이게
+        transition: opacity 1s; // 서서히 나타나게
       }
     }
   }
 }
 
 .swiper {
-  height: 100vh; // 첫 번째 섹션이 화면 전체를 차지
+  height: 100vh;
   position: relative;
   overflow: hidden;
   transition: opacity 3s ease;
 }
 
 .content {
-  // display: block;
   position: relative;
-  // top: 638px;
-  // left: 0;
-  // width: 100%;
-  // height: 100vh;
+
   z-index: 10;
   background-color: #000;
-  // background-size: cover;
-  // mask-image: linear-gradient(
-  //   to top,
-  //   rgba(0, 0, 0, 1) 95%,
-  //   // 검은색으로 시작 (완전히 보임)
-  //   rgba(0, 0, 0, 0) 100% // 투명해짐 (완전히 사라짐)
-  // );
-  // @include mobileMore {
-  //   top: 638px;
-  // }
-  // @include tabletMore {
-  //   top: 823px;
-  // }
 }
 
 .section_record .record_img_wrap {
@@ -349,18 +324,6 @@
     position: absolute;
   }
 }
-// #record {
-//   opacity: 0; // 처음에는 안 보이게 설정
-//   transition: opacity 3s ease, transform 3s ease; // 천천히 나타나는 효과
-//   transform: translateY(50px); // 살짝 아래에서 올라오게 설정
-//   -webkit-transform: translateY(50px); // Safari와 같은 브라우저
-//   -ms-transform: translateY(50px); // IE를 위한 프리픽스
-// }
-
-// .record_img_wrap__black {
-//   position: relative;
-//   height: 100vh;
-// }
 
 .daegu_story_inner {
   position: static;
@@ -393,8 +356,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); // opacity 0.5의 검정색 배경
-      pointer-events: none; // dimmed 레이어가 클릭되지 않도록 설정
+      background-color: rgba(0, 0, 0, 0.5);
+      pointer-events: none;
     }
   }
 
@@ -404,13 +367,13 @@
     left: 50%;
     width: 221vw;
     height: 100vh;
-    transform: translate(-50%, -50%) scale(1.5); /* 확대를 통해 검은 여백 제거 */
+    transform: translate(-50%, -50%) scale(1.5);
     pointer-events: none;
     mask-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 55) 80%,
-      // 검은색으로 시작 (완전히 보임)
-      rgba(0, 0, 0, 1) 100% // 투명해짐 (완전히 사라짐)
+
+      rgba(0, 0, 0, 1) 100%
     );
   }
 }

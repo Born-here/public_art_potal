@@ -851,7 +851,6 @@ div {
   font-weight: 700;
   font-size: 1.3rem;
   line-height: 27px;
-  /* identical to box height */
   text-align: center;
   color: #fff;
 }
@@ -1038,7 +1037,7 @@ div {
   height: auto;
   z-index: 2;
   bottom: 300px;
-  left: 0; /* 초기 위치 조정 */
+  left: 0;
   transform: translate(0, -50%);
   line-height: 13.88889vw;
   letter-spacing: -0.2px;
@@ -1181,7 +1180,7 @@ div {
   left: 50%;
   width: 221vw;
   height: 100vh;
-  transform: translate(-50%, -50%) scale(1.5); /* 확대를 통해 검은 여백 제거 */
+  transform: translate(-50%, -50%) scale(1.5);
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, rgb(0, 0, 0) 100%);
           mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, rgb(0, 0, 0) 100%);

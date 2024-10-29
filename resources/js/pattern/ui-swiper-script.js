@@ -18,16 +18,16 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function () {
-  var swiper = new Swiper('.swiper_video', {
-    direction: 'vertical',
-    rewind: true,
-    // slidesPerView: 0,
-    // spaceBetween: 30,
-    mousewheel: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-});
+// $(document).ready(function () {
+//   var swiper = new Swiper('.swiper_video', {
+//     direction: 'vertical',
+//     rewind: true,
+//     // slidesPerView: 0,
+//     // spaceBetween: 30,
+//     mousewheel: true,
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
+//   });
+// });
