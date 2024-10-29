@@ -612,8 +612,8 @@ div {
   width: 200px;
   height: 38px;
   vertical-align: top;
+  background: url(https://www.publicart.or.kr/img/logo.png) 0 0 no-repeat;
   background-size: 100% auto;
-  background-image: url(/resources/images/logo.png) 0 0 no-repeat;
 }
 .header .header_ct .btn_gnb {
   display: flex;
@@ -1157,26 +1157,12 @@ div {
   transform: translateY(-50%);
   text-align: center;
 }
-.section_record .record_story .daegu_story_inner .story_img_box {
-  position: absolute;
-  display: block;
-  margin: 0 7.77778vw;
-  top: 50%;
-  left: 50%;
-  width: 272px;
-  height: 272px;
-  border-radius: 100px;
-  background: #ff2d55;
-  transform: translate(-50%, -50%);
-}
 
 .daegu_space {
   position: relative;
+  width: 100%;
   height: 700px;
   top: 431px;
-  left: 0;
-  right: 0;
-  z-index: -4;
   max-width: 1360px;
   margin: 0 auto;
   padding-bottom: 5.72917vw;
@@ -1184,8 +1170,31 @@ div {
   transform: translateY(-50%);
   text-align: center;
 }
+.daegu_space .daegu_story.index01 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.daegu_space .daegu_story.index01 .story_img_box {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 46.875vw;
+  height: 46.875vw;
+  border-radius: 500px;
+  background: #ff2d55;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+@media (min-width: 1024px) {
+  .daegu_space .daegu_story.index01 .story_img_box {
+    width: 36.458vw;
+    height: 36.458vw;
+  }
+}
 .daegu_space .video-container {
-  position: fixed;
+  position: relative;
   width: 100vw;
   height: 100vh;
   top: 30.208vw;

@@ -338,29 +338,18 @@
       font-size: 0;
       transform: translateY(-50%);
       text-align: center;
-      .story_img_box {
-        position: absolute;
-        display: block;
-        margin: 0 7.77778vw;
-        top: 50%;
-        left: 50%;
-        width: 272px;
-        height: 272px;
-        border-radius: 100px;
-        background: #ff2d55;
-        transform: translate(-50%, -50%);
-      }
     }
   }
 }
 
 .daegu_space {
   position: relative;
+  width: 100%;
   height: 700px;
   top: 431px;
-  left: 0;
-  right: 0;
-  z-index: -4;
+  // left: 0;
+  // right: 0;
+  // z-index: -4;
   max-width: 1360px;
   margin: 0 auto;
   padding-bottom: 5.72917vw;
@@ -369,9 +358,31 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: center;
+  .daegu_story.index01 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .story_img_box {
+      position: absolute;
+      display: block;
+      // margin: 0 7.77778vw;
+      top: 50%;
+      left: 50%;
+      width: 46.875vw;
+      height: 46.875vw;
+      border-radius: 500px;
+      background: #ff2d55;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      @include tabletMore {
+        width: 36.458vw;
+        height: 36.458vw;
+      }
+    }
+  }
 
   .video-container {
-    position: fixed;
+    position: relative;
     width: 100vw;
     height: 100vh;
     top: 30.208vw;
