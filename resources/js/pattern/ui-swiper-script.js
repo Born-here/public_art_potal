@@ -3,6 +3,16 @@ $(document).ready(function () {
     spaceBetween: 0,
     centeredSlides: true,
     loop: true,
+    effect: 'coverflow',
+    speed: 800,
+    parallax: true,
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 10,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
     autoplay: {
       delay: 1500,
       disableOnInteraction: false,

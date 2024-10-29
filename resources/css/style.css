@@ -1158,7 +1158,7 @@ div {
   position: fixed;
   width: 100vw;
   height: 80vh;
-  top: 0;
+  top: 30.208vw;
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
