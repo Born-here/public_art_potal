@@ -1157,10 +1157,11 @@ div {
 }
 .daegu_story_inner .video-container {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 80vh;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   overflow: hidden;
   z-index: -1;
 }
@@ -1178,7 +1179,7 @@ div {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100vw;
+  width: 221vw;
   height: 100vh;
   transform: translate(-50%, -50%) scale(1.5); /* 확대를 통해 검은 여백 제거 */
   pointer-events: none;
