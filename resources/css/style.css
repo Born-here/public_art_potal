@@ -1140,8 +1140,33 @@ div {
 .section_record .record {
   position: absolute;
 }
+.section_record .daegu_story_inner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  margin: 0 auto;
+  font-size: 0;
+  transform: translateY(-50%);
+  text-align: center;
+}
+.section_record .daegu_story_inner .story_img_box {
+  position: relative;
+  display: block;
+  margin: 0 7.77778vw;
+}
+.section_record .daegu_story_inner .story_img_box::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 272px;
+  border-radius: 100px;
+  background: #ff2d55;
+}
 
-.daegu_story_inner {
+.daegu_space {
   position: static;
   top: 50%;
   left: 0;
@@ -1154,7 +1179,7 @@ div {
   transform: translateY(-50%);
   text-align: center;
 }
-.daegu_story_inner .video-container {
+.daegu_space .video-container {
   position: fixed;
   width: 100vw;
   height: 80vh;
@@ -1164,7 +1189,7 @@ div {
   overflow: hidden;
   z-index: -1;
 }
-.daegu_story_inner .video-container::after {
+.daegu_space .video-container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1174,7 +1199,7 @@ div {
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
 }
-.daegu_story_inner .video-container iframe {
+.daegu_space .video-container iframe {
   position: absolute;
   top: 50%;
   left: 50%;

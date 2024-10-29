@@ -323,9 +323,36 @@
   .record {
     position: absolute;
   }
+  .daegu_story_inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin: 0 auto;
+    font-size: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    .story_img_box {
+      position: relative;
+      display: block;
+      margin: 0 7.77778vw;
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 272px;
+        //         left: calc(50% - 272px/2 + 116px);
+        // top: calc(50% - 272px/2 - 23px);
+        border-radius: 100px;
+        background: #ff2d55;
+      }
+    }
+  }
 }
 
-.daegu_story_inner {
+.daegu_space {
   position: static;
   top: 50%;
   left: 0;
