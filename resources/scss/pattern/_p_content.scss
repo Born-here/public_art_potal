@@ -354,30 +354,24 @@
     .story_img_box {
       position: absolute;
 
-      top: 50%;
-      left: 50%;
-      width: 46.875vw;
-      height: 46.875vw;
+      width: 56.875vw;
+      height: 56.875vw;
       border-radius: 500px;
       background: #ff2d55;
-      transform: translate(-50%, -50%);
-
+      @include mobile {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
       @include mobileMore {
-        // left: 70%;
-        // transform: translate(-50%, 150%);
         position: relative;
         width: 35.41667vw;
         height: 35.41667vw;
         max-width: 680px;
-        display: inline-block;
-
-        vertical-align: top;
-      }
-      @include tabletMore {
-        width: 26.458vw;
-        height: 26.458vw;
-        left: 70%;
-        transform: translate(-50%, 160%);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -399,8 +393,46 @@
       @include mobileMore {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+      }
+      .img_inner {
+        position: relative;
+        width: 56.875vw;
+        height: 56.875vw;
+        border-radius: 500px;
+        @include mobile {
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        @include mobileMore {
+          position: relative;
+          width: 35.41667vw;
+          height: 35.41667vw;
+          max-width: 680px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+        .story_img_dash {
+          width: 50.875vw;
+          height: 50.875vw;
+          background: transparent;
+          outline: 11px dashed #ff5171; /* 아웃라인 색상과 두께 */
+          outline-offset: -9.208vw;
+          border-radius: 500px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          @include mobile {
+            outline-offset: -2.208vw;
+          }
+          @include tablet {
+            outline-offset: -10.208vw;
+          }
+        }
       }
 
       .story_text_box {
@@ -432,6 +464,10 @@
           justify-content: space-between;
           flex-direction: column;
           align-items: center;
+          @include mobile {
+            padding-top: 10px;
+          }
+
           @include mobileMore {
             top: 50%;
             left: 0;

@@ -1165,13 +1165,17 @@ div {
 }
 .daegu_space .daegu_story.index01 .story_img_box {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 46.875vw;
-  height: 46.875vw;
+  width: 56.875vw;
+  height: 56.875vw;
   border-radius: 500px;
   background: #ff2d55;
-  transform: translate(-50%, -50%);
+}
+@media (max-width: 599px) {
+  .daegu_space .daegu_story.index01 .story_img_box {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 @media (min-width: 600px) {
   .daegu_space .daegu_story.index01 .story_img_box {
@@ -1179,16 +1183,10 @@ div {
     width: 35.41667vw;
     height: 35.41667vw;
     max-width: 680px;
-    display: inline-block;
-    vertical-align: top;
-  }
-}
-@media (min-width: 1024px) {
-  .daegu_space .daegu_story.index01 .story_img_box {
-    width: 26.458vw;
-    height: 26.458vw;
-    left: 70%;
-    transform: translate(-50%, 160%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }
 .daegu_space .daegu_story {
@@ -1212,8 +1210,54 @@ div {
   .daegu_space .daegu_story .daegu_story_inner {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+  }
+}
+.daegu_space .daegu_story .daegu_story_inner .img_inner {
+  position: relative;
+  width: 56.875vw;
+  height: 56.875vw;
+  border-radius: 500px;
+}
+@media (max-width: 599px) {
+  .daegu_space .daegu_story .daegu_story_inner .img_inner {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (min-width: 600px) {
+  .daegu_space .daegu_story .daegu_story_inner .img_inner {
+    position: relative;
+    width: 35.41667vw;
+    height: 35.41667vw;
+    max-width: 680px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.daegu_space .daegu_story .daegu_story_inner .img_inner .story_img_dash {
+  width: 50.875vw;
+  height: 50.875vw;
+  background: transparent;
+  outline: 11px dashed #ff5171; /* 아웃라인 색상과 두께 */
+  outline-offset: -9.208vw;
+  border-radius: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 599px) {
+  .daegu_space .daegu_story .daegu_story_inner .img_inner .story_img_dash {
+    outline-offset: -2.208vw;
+  }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .daegu_space .daegu_story .daegu_story_inner .img_inner .story_img_dash {
+    outline-offset: -10.208vw;
   }
 }
 .daegu_space .daegu_story .daegu_story_inner .story_text_box {
@@ -1245,6 +1289,11 @@ div {
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 599px) {
+  .daegu_space .daegu_story .daegu_story_inner .story_text_box .text_inner {
+    padding-top: 10px;
+  }
 }
 @media (min-width: 600px) {
   .daegu_space .daegu_story .daegu_story_inner .story_text_box .text_inner {
