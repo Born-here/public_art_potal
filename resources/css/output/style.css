@@ -889,8 +889,21 @@ div {
 
 .container {
   position: relative;
-  height: 2500px;
+  height: 805.26vw;
   background: #000;
+  padding-top: 62px;
+}
+.container .container.story_start {
+  background: #000;
+}
+.container .container.story_start .record_ani_wrap .record_img_wrap.black {
+  display: none;
+}
+.container .container.story_start .record_ani_wrap .record_img_wrap.upper {
+  display: none;
+}
+.container .container.story_start .record_ani_wrap .record_story .story_img_box .record_img {
+  display: block;
 }
 .container .circle_bg {
   position: absolute;
@@ -1036,7 +1049,7 @@ div {
   width: 100%;
   height: auto;
   z-index: 2;
-  bottom: 300px;
+  bottom: 100px;
   left: 0;
   transform: translate(0, -50%);
   line-height: 13.88889vw;
@@ -1053,12 +1066,6 @@ div {
   .record_text_wrap .record_text_inner .title {
     bottom: 100px;
   }
-}
-.record_text_wrap .record_text_inner .title .text01,
-.record_text_wrap .record_text_inner .title .text02,
-.record_text_wrap .record_text_inner .title .text03 {
-  opacity: 0;
-  transition: opacity 1s;
 }
 
 .swiper {
@@ -1137,65 +1144,64 @@ div {
   left: 79.479vw;
   top: 5.417vw;
 }
+.section_record .record.img07 {
+  width: 11.354vw;
+  height: 22.448vw;
+  left: 50%;
+  top: 50%;
+}
 .section_record .record {
   position: absolute;
 }
 
-.daegu_space {
-  position: relative;
-  width: 100%;
-  height: 700px;
-  top: 431px;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding-bottom: 5.72917vw;
-  font-size: 0;
-  transform: translateY(-50%);
-  text-align: center;
-}
-.daegu_space .daegu_story.index01 {
-  position: relative;
+.record_story.index01 {
+  position: sticky;
   width: 100%;
   height: 100vh;
+  top: 1000px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.daegu_space .daegu_story.index01 .story_img_box {
+.record_story.index01 .video-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 30.208vw;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  z-index: -1;
+}
+.record_story.index01 .video-container::after {
+  content: "";
   position: absolute;
-  width: 56.875vw;
-  height: 56.875vw;
-  border-radius: 500px;
-  background: #ff2d55;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-@media (max-width: 599px) {
-  .daegu_space .daegu_story.index01 .story_img_box {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.record_story.index01 .video-container .video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 221vw;
+  height: 100vh;
+  transform: translate(-50%, -50%) scale(1.6);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, rgb(0, 0, 0) 100%);
+          mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, rgb(0, 0, 0) 100%);
 }
-@media (min-width: 600px) {
-  .daegu_space .daegu_story.index01 .story_img_box {
-    position: relative;
-    width: 35.41667vw;
-    height: 35.41667vw;
-    max-width: 680px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.daegu_space .daegu_story {
+
+.record_story {
   position: relative;
   z-index: 3;
   height: calc(100vh + 50px);
   overflow: hidden;
 }
-.daegu_space .daegu_story .daegu_story_inner {
+.record_story .record_story_inner {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1207,27 +1213,27 @@ div {
   text-align: center;
 }
 @media (min-width: 600px) {
-  .daegu_space .daegu_story .daegu_story_inner {
+  .record_story .record_story_inner {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
 }
-.daegu_space .daegu_story .daegu_story_inner .img_inner {
+.record_story .record_story_inner .img_inner {
   position: relative;
   width: 56.875vw;
   height: 56.875vw;
   border-radius: 500px;
 }
 @media (max-width: 599px) {
-  .daegu_space .daegu_story .daegu_story_inner .img_inner {
+  .record_story .record_story_inner .img_inner {
     left: 50%;
     transform: translate(-50%, -50%);
   }
 }
 @media (min-width: 600px) {
-  .daegu_space .daegu_story .daegu_story_inner .img_inner {
+  .record_story .record_story_inner .img_inner {
     position: relative;
     width: 35.41667vw;
     height: 35.41667vw;
@@ -1238,7 +1244,33 @@ div {
     align-items: center;
   }
 }
-.daegu_space .daegu_story .daegu_story_inner .img_inner .story_img_dash {
+.record_story .record_story_inner .img_inner .story_img_box {
+  position: absolute;
+  width: 56.875vw;
+  height: 56.875vw;
+  border-radius: 500px;
+  background: #ff2d55;
+}
+@media (max-width: 599px) {
+  .record_story .record_story_inner .img_inner .story_img_box {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (min-width: 600px) {
+  .record_story .record_story_inner .img_inner .story_img_box {
+    position: relative;
+    width: 35.41667vw;
+    height: 35.41667vw;
+    max-width: 680px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.record_story .record_story_inner .img_inner .story_img_dash {
   width: 50.875vw;
   height: 50.875vw;
   background: transparent;
@@ -1251,21 +1283,21 @@ div {
   transform: translate(-50%, -50%);
 }
 @media (max-width: 599px) {
-  .daegu_space .daegu_story .daegu_story_inner .img_inner .story_img_dash {
+  .record_story .record_story_inner .img_inner .story_img_dash {
     outline-offset: -2.208vw;
   }
 }
 @media (min-width: 600px) and (max-width: 1023px) {
-  .daegu_space .daegu_story .daegu_story_inner .img_inner .story_img_dash {
+  .record_story .record_story_inner .img_inner .story_img_dash {
     outline-offset: -10.208vw;
   }
 }
-.daegu_space .daegu_story .daegu_story_inner .story_text_box {
+.record_story .record_story_inner .story_text_box {
   position: relative;
   display: block;
 }
 @media (min-width: 600px) {
-  .daegu_space .daegu_story .daegu_story_inner .story_text_box {
+  .record_story .record_story_inner .story_text_box {
     position: relative;
     width: 35.41667vw;
     height: 35.41667vw;
@@ -1279,7 +1311,7 @@ div {
     align-items: center;
   }
 }
-.daegu_space .daegu_story .daegu_story_inner .story_text_box .text_inner {
+.record_story .record_story_inner .story_text_box .text_inner {
   display: flex;
   position: absolute;
   top: 80%;
@@ -1291,70 +1323,39 @@ div {
   align-items: center;
 }
 @media (max-width: 599px) {
-  .daegu_space .daegu_story .daegu_story_inner .story_text_box .text_inner {
+  .record_story .record_story_inner .story_text_box .text_inner {
     padding-top: 10px;
   }
 }
 @media (min-width: 600px) {
-  .daegu_space .daegu_story .daegu_story_inner .story_text_box .text_inner {
+  .record_story .record_story_inner .story_text_box .text_inner {
     top: 50%;
     left: 0;
     right: 0;
     transform: translateY(-50%);
   }
 }
-.daegu_space .daegu_story .daegu_story_inner .story_text_box .text {
+.record_story .record_story_inner .story_text_box .text {
   color: #fff;
   font-size: 8.33333vw;
   line-height: 12.77778vw;
   font-weight: 800;
 }
 @media (min-width: 600px) {
-  .daegu_space .daegu_story .daegu_story_inner .story_text_box .text {
+  .record_story .record_story_inner .story_text_box .text {
     font-size: 3.54167vw;
     line-height: 4.90625vw;
     font-weight: 900;
   }
 }
-.daegu_space .daegu_story .daegu_story_inner .story_text_box .text.stroke {
+.record_story .record_story_inner .story_text_box .text.stroke {
   color: transparent;
   -webkit-text-stroke: 0.032vw #fff;
 }
 @media (min-width: 600px) {
-  .daegu_space .daegu_story .daegu_story_inner .story_text_box .text.stroke {
+  .record_story .record_story_inner .story_text_box .text.stroke {
     font-size: 3.54167vw;
     line-height: 4.90625vw;
     font-weight: 900;
   }
-}
-.daegu_space .video-container {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 30.208vw;
-  left: 50%;
-  transform: translateX(-50%);
-  overflow: hidden;
-  z-index: -1;
-}
-.daegu_space .video-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-}
-.daegu_space .video-container iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 221vw;
-  height: 100vh;
-  transform: translate(-50%, -50%) scale(1.5);
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, rgb(0, 0, 0) 100%);
-          mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, rgb(0, 0, 0) 100%);
 }/*# sourceMappingURL=style.css.map */

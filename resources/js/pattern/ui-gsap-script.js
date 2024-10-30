@@ -20,27 +20,126 @@
 //     scrub: true,
 //   },
 // });
-gsap.to('.video-container', {
-  y: -window.innerHeight,
-  scale: 1.5, // 스크롤 시 약간 확대되도록 설정
-  ease: 'power1.out',
-  opacity: 0,
+
+// -----------------------------------------
+
+// gsap.to('.video-container', {
+//   y: -window.innerHeight,
+//   scale: 1.5, // 스크롤 시 약간 확대되도록 설정
+//   ease: 'power1.out',
+//   opacity: 0,
+//   scrollTrigger: {
+//     trigger: '.record_ani_wrap .record_text_wrap',
+//     start: 'top center',
+//     end: 'bottom top',
+//     scrub: true,
+//   },
+// });
+
+// gsap.to('.record_story.index01', {
+//   y: -5,
+//   ease: 'power1.inOut',
+//   opacity: 0,
+//   scrollTrigger: {
+//     trigger: '.record_space',
+//     start: 'top center',
+//     end: 'bottom top',
+//     scrub: true,
+//   },
+// });
+
+$(window).resize(function () {
+  ScrollTrigger.refresh();
+});
+
+var height = $(window).height();
+gsap.to('.record.img07', {
+  x: '-50%',
+  y: '-50%',
+  ease: 'none',
   scrollTrigger: {
-    trigger: '.daegu_space',
-    start: 'top top',
-    end: 'bottom top',
-    scrub: true,
+    trigger: '.record_ani_wrap .record_text_wrap',
+    start: 'bottom right',
+    end: '+=' + height * 1.5,
+    scrub: 1,
   },
 });
 
-gsap.to('.daegu_story.index01', {
-  y: -5,
-  ease: 'power1.inOut',
+gsap.to('.record_img_wrap.black .record_img_inner', {
+  scale: 0.6,
   opacity: 0,
+  ease: 'none',
   scrollTrigger: {
-    trigger: '.daegu_space',
-    start: 'top center',
-    end: 'bottom top',
-    scrub: true,
+    trigger: '.record_ani_wrap .record_text_wrap',
+    start: 'top bottom',
+    end: '+=' + height * 2,
+    scrub: 1,
   },
 });
+
+gsap.to('.record_text_inner .title .text', {
+  opacity: 1,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.record_ani_wrap .record_text_wrap',
+    start: 'top center',
+    end: '+=' + height * 0.5,
+    scrub: true,
+  },
+  stagger: 0.3,
+});
+
+gsap.to('.record_ani_wrap .record_text_inner', {
+  scale: 0.4,
+  opacity: 0,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.record_ani_wrap .record_text_wrap',
+    start: '50vh top',
+    end: '+=' + height * 1,
+    scrub: 1,
+  },
+});
+
+gsap.to('.record_story.index01', {
+  opacity: 1,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.record_story.index01',
+    start: 'top 50vh',
+    end: 'top top',
+    scrub: 1,
+  },
+});
+
+gsap.to('.record_story_video1', {
+  opacity: 1,
+  duration: 1,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.record_story.index01',
+    start: 'top center',
+    end: 'top center',
+    scrub: 1,
+  },
+});
+
+ScrollTrigger.create({
+  trigger: '.record_ani_wrap > .record_story.index01',
+  start: 'top center',
+  end: '+=1',
+  onEnter: () => $('.container').addClass('story_start'),
+  onEnterBack: () => $('.container').removeClass('story_start'),
+  onLeaveBack: () => $('.container').removeClass('story_start'),
+});
+
+// const tl = gsap.timeline();
+// tl.fromTo('.dimmed', { opacity: 1 }, { opacity: 0 });
+
+// ScrollTrigger.create({
+//   animation: tl,
+//   trigger: '.section_art',
+//   start: 'top top',
+//   end: '50vh top',
+//   scrub: 1,
+// });
