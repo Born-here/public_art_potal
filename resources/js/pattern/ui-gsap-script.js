@@ -52,16 +52,28 @@ $(window).resize(function () {
   ScrollTrigger.refresh();
 });
 
+$(window).on('load resize', function () {
+  updateAnimation();
+});
+
+// 분홍색 원의 위치와 크기를 가져옵니다.
+var target = $('.story_img_box'); // 분홍색 원의 타겟 요소
+var targetOffset = target.offset(); // 타겟의 위치
+var targetX = targetOffset.left + target.width() / 10; // 중앙 x 위치
+var targetY = targetOffset.top + target.height() / 20; // 중앙 y 위치
+
 var height = $(window).height();
 gsap.to('.record.img07', {
-  x: '-50%',
-  y: '-50%',
-  ease: 'none',
+  x: -targetX - $(window).width(), // 오른쪽 하단에서 왼쪽 대각선 위로 이동
+  y: -targetY - $(window).height(),
+  opacity: 0, // 타겟에 도착하면 사라지도록 설정
+  ease: 'power1.inOut',
+
   scrollTrigger: {
     trigger: '.record_ani_wrap .record_text_wrap',
-    start: 'bottom right',
-    end: '+=' + height * 1.5,
-    scrub: 1,
+    start: 'bottom+=30 top',
+    end: '+=150%',
+    scrub: 0.5,
   },
 });
 
@@ -77,16 +89,18 @@ gsap.to('.record_img_wrap.black .record_img_inner', {
   },
 });
 
-gsap.to('.record_text_inner .title .text', {
+gsap.to('.record_ani_wrap .record_text_inner .text', {
   opacity: 1,
   ease: 'none',
+  stagger: 0.5,
+  duration: 1,
   scrollTrigger: {
     trigger: '.record_ani_wrap .record_text_wrap',
     start: 'top center',
     end: '+=' + height * 0.5,
-    scrub: true,
+    // scrub: true,
   },
-  stagger: 0.3,
+  // stagger: 5,
 });
 
 gsap.to('.record_ani_wrap .record_text_inner', {
@@ -94,8 +108,8 @@ gsap.to('.record_ani_wrap .record_text_inner', {
   opacity: 0,
   ease: 'none',
   scrollTrigger: {
-    trigger: '.record_ani_wrap .record_text_wrap',
-    start: '50vh top',
+    trigger: '.record_ani_wrap .record_text_inner',
+    start: 'top center',
     end: '+=' + height * 1,
     scrub: 1,
   },
@@ -125,7 +139,7 @@ gsap.to('.record_story_video1', {
 });
 
 ScrollTrigger.create({
-  trigger: '.record_ani_wrap > .record_story.index01',
+  trigger: '.record_ani_wrap > .space',
   start: 'top center',
   end: '+=1',
   onEnter: () => $('.container').addClass('story_start'),

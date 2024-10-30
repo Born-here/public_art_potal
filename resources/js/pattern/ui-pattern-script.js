@@ -36,42 +36,41 @@ $(document).ready(function () {
 
 // document.addEventListener('scroll', function () {
 //   const title = document.querySelector('.title');
-//   const text01 = document.querySelector('.title .text01');
-//   const text02 = document.querySelector('.title .text02');
-//   const text03 = document.querySelector('.title .text03');
+//   const text1 = document.querySelector('.title .text1');
+//   const text2 = document.querySelector('.title .text2');
+//   const text3 = document.querySelector('.title .text3');
 //   const scrollPosition = window.scrollY;
 //   const windowHeight = window.innerHeight;
 
 //   if (scrollPosition > windowHeight * 0.4) {
-//     text01.style.opacity = '1';
+//     text1.style.opacity = '1';
 //   } else {
-//     text01.style.opacity = '0';
+//     text1.style.opacity = '0';
+//   }
+
+//   if (scrollPosition > windowHeight * 0.6) {
+//     text2.style.opacity = '1';
+//   } else {
+//     text2.style.opacity = '0';
 //   }
 
 //   if (scrollPosition > windowHeight * 0.8) {
-//     text02.style.opacity = '1';
+//     text3.style.opacity = '1';
 //   } else {
-//     text02.style.opacity = '0';
+//     text3.style.opacity = '0';
 //   }
 
-//   if (scrollPosition > windowHeight * 0.9) {
-//     text03.style.opacity = '1';
-//   } else {
-//     text03.style.opacity = '0';
-//   }
+// if (scrollPosition > windowHeight * 1.0) {
+//   const scaleValue = Math.max(1 - (scrollPosition - windowHeight * 1.0) / (windowHeight * 0.5), 0.5); // 0.5까지 축소
+//   const opacityValue = Math.max(1 - (scrollPosition - windowHeight * 1.0) / (windowHeight * 0.5), 0); // opacity도 천천히 0까지
 
-//   if (scrollPosition > windowHeight * 1.0) {
-//     const scaleValue = Math.max(1 - (scrollPosition - windowHeight * 1.0) / (windowHeight * 0.5), 0.5); // 0.5까지 축소
-//     const opacityValue = Math.max(1 - (scrollPosition - windowHeight * 1.0) / (windowHeight * 0.5), 0); // opacity도 천천히 0까지
-
-//     title.style.transform = `scale(${scaleValue})`;
-//     title.style.opacity = opacityValue;
-//   } else {
-//     // 초기 상태로
-//     title.style.transform = 'scale(1)';
-//     title.style.opacity = '1';
-//   }
-// });
+//   title.style.transform = `scale(${scaleValue})`;
+//   title.style.opacity = opacityValue;
+// } else {
+//   // 초기 상태로
+//   title.style.transform = 'scale(1)';
+//   title.style.opacity = '1';
+// }
 
 // window.addEventListener('scroll', () => {
 //   const scrollPosition = window.scrollY;
