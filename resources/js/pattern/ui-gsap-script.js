@@ -57,21 +57,21 @@ $(window).on('load resize', function () {
 });
 
 // 분홍색 원의 위치와 크기를 가져옵니다.
-var target = $('.story_img_box'); // 분홍색 원의 타겟 요소
+var target = $('.section_record .story_img_box'); // 분홍색 원의 타겟 요소
 var targetOffset = target.offset(); // 타겟의 위치
-var targetX = targetOffset.left + target.width() / 10; // 중앙 x 위치
-var targetY = targetOffset.top + target.height() / 20; // 중앙 y 위치
+var targetX = targetOffset.left + target.width() / -2; // 중앙 x 위치
+var targetY = targetOffset.top + target.height() / -2; // 중앙 y 위치
 
 var height = $(window).height();
 gsap.to('.record.img07', {
-  x: -targetX - $(window).width(), // 오른쪽 하단에서 왼쪽 대각선 위로 이동
-  y: -targetY - $(window).height(),
+  x: -targetX, // 오른쪽 하단에서 왼쪽 대각선 위로 이동
+  y: -targetY,
   opacity: 0, // 타겟에 도착하면 사라지도록 설정
   ease: 'power1.inOut',
 
   scrollTrigger: {
     trigger: '.record_ani_wrap .record_text_wrap',
-    start: 'bottom+=30 top',
+    start: 'bottom center',
     end: '+=150%',
     scrub: 0.5,
   },
