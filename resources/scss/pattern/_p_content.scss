@@ -76,12 +76,44 @@
 .container {
   position: relative;
   height: 805.26vw;
-  background: #000;
+  // background: #000;
   padding-top: 62px;
+  .record_story_video1,
+  .record_story_video2,
+  .record_story_video3 {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  &.story_start {
+    .record_story_video1,
+    .record_story_video2,
+    .record_story_video3 {
+      display: block;
+      opacity: 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    .record_ani_wrap .record_img_wrap.black {
+      display: none;
+      opacity: 0;
+    }
+
+    .record_ani_wrap .record_img_wrap.upper {
+      display: none;
+    }
+  }
+
   .container.story_start {
     background: #000;
     .record_ani_wrap .record_img_wrap.black {
       display: none;
+      opacity: 0;
     }
     .record_ani_wrap .record_img_wrap.upper {
       display: none;
@@ -453,47 +485,51 @@
   z-index: 3;
   height: calc(100vh + 50px);
   overflow: hidden;
-  .dimmed {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: none;
-    // background: #000;
-  }
 
-  .video-container {
-    // position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 9.208vw;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden;
-    z-index: -1;
-    iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100vw; /* 너비를 뷰포트 너비에 맞춤 */
-      height: 100vh; /* 높이를 뷰포트 높이에 맞춤 */
-      transform: translate(-50%, -50%) scale(3.5); /* 중앙 정렬 및 확대 */
-      object-fit: cover; /* 아이프레임 내용이 잘리더라도 꽉 차게 유지 */
-      pointer-events: none;
-    }
+  // video {
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  //   position: fixed;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   z-index: 1;
+  //   pointer-events: none;
+  //   z-index: 10;
+  // }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-  }
+  // .video-container {
+  //   // position: fixed;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   top: 9.208vw;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   overflow: hidden;
+  //   z-index: -1;
+  //   iframe {
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 50%;
+  //     width: 100vw; /* 너비를 뷰포트 너비에 맞춤 */
+  //     height: 100vh; /* 높이를 뷰포트 높이에 맞춤 */
+  //     transform: translate(-50%, -50%) scale(3.5); /* 중앙 정렬 및 확대 */
+  //     object-fit: cover; /* 아이프레임 내용이 잘리더라도 꽉 차게 유지 */
+  //     pointer-events: none;
+  //   }
+
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     background-color: rgba(0, 0, 0, 0.5);
+  //   }
+  // }
 
   .record_story_inner {
     position: absolute;
@@ -506,6 +542,8 @@
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     text-align: center;
+    display: flex;
+    flex-direction: column;
     @include mobileMore {
       display: flex;
       flex-direction: row;
@@ -582,6 +620,11 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+    }
+  }
+  &.index02 .story_img_box {
+    @include mobile {
+      order: 1;
     }
   }
   &.index02 .record_img_box {
@@ -664,6 +707,7 @@
 
   .story_text_box {
     position: relative;
+
     @include mobileMore {
       position: relative;
       width: 35.41667vw;
@@ -728,6 +772,7 @@
     font-size: 0;
     text-align: center;
     white-space: nowrap;
+
     .text {
       display: inline-block;
       vertical-align: top;
@@ -760,13 +805,26 @@
     }
   }
   &.index02 .story_text_box {
+    @include mobile {
+      order: 2;
+    }
     @include mobileMore {
       border-radius: 500px;
+    }
+  }
+  &.index02 .text_inner {
+    @include mobile {
+      transform: translate(-50%, -50%);
     }
   }
   &.index03 .story_text_box {
     @include mobileMore {
       border-radius: 0vw 15.052vw 15.052vw 0vw;
+    }
+  }
+  &index03 .story_title_box {
+    @include mobile {
+      order: 3;
     }
   }
 }
@@ -775,8 +833,16 @@
 .section_record .record_story.index01 .sqaure {
   background: #ff2d55;
 }
-
-.record_story.index02 .story_img_box {
+.section_record .record_story.index02 .round,
+.section_record .record_story.index02 .sqaure {
   background: #007aff;
-  border-radius: 0px 289px 289px 0px;
 }
+.section_record .record_story.index03 .round,
+.section_record .record_story.index03 .sqaure {
+  background: #af52de;
+}
+
+// .record_story.index02 .story_img_box {
+//   background: #007aff;
+//   border-radius: 0px 289px 289px 0px;
+// }
