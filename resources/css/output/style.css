@@ -895,14 +895,26 @@ div {
 .container .record_story_video1,
 .container .record_story_video2,
 .container .record_story_video3 {
-  display: none;
+  visibility: hidden;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, visibility 0s 0.5s;
+}
+.container .record_story .dimmed {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.1s ease-in-out;
 }
 .container.story_start .record_story_video1,
 .container.story_start .record_story_video2,
 .container.story_start .record_story_video3 {
-  display: block;
+  visibility: visible;
   opacity: 1;
   position: fixed;
   top: 0;
@@ -917,6 +929,10 @@ div {
 }
 .container.story_start .record_ani_wrap .record_img_wrap.upper {
   display: none;
+}
+.container.story_start .record_story .dimmed {
+  opacity: 1;
+  background: #000;
 }
 .container .container.story_start {
   background: #000;
@@ -1162,6 +1178,7 @@ div {
   height: 13.854vw;
   left: 31.302vw;
   top: 29.583vw;
+  z-index: 10;
 }
 .section_record .record.img02 {
   width: 23.438vw;
@@ -1608,4 +1625,252 @@ div {
 .section_record .record_story.index03 .round,
 .section_record .record_story.index03 .sqaure {
   background: #af52de;
+}
+
+.section_art {
+  position: relative;
+  height: 800vh;
+  margin-top: 387vh;
+  background: #fff;
+}
+.section_art .inner {
+  position: sticky;
+  top: 80px;
+  left: 0;
+  height: calc(100vh - 80px);
+  z-index: 2;
+  text-align: center;
+  font-size: 0;
+  overflow: hidden;
+}
+.section_art .inner::before {
+  content: "";
+  width: 0px;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.section_art .activity {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: -webkit-calc(100vw - 57.08vw);
+  width: 42.92vw;
+  max-width: 823px;
+  height: -webkit-calc(100vw - 57.08vw);
+  height: 42.92vw;
+  max-height: 823px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+.section_art .activity > .lottie_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 10.3125vw;
+  max-width: 198px;
+  height: 14.16667vw;
+  max-height: 272px;
+}
+.section_art .activity > .lottie_box .lottie_img {
+  overflow: hidden;
+  border-radius: 300px;
+  width: 10.3125vw;
+  max-width: 198px;
+  transform: translateZ(0);
+  will-change: transform;
+}
+.section_art .activity .lottie_box.lottie01 {
+  margin-top: -50%;
+  margin-left: -50%;
+}
+.section_art .activity .lottie_box.lottie01 .lottie_img {
+  border: 1px solid #00d640;
+}
+.section_art .activity .lottie_box.lottie01 .lottie_text {
+  min-width: 6.35417vw;
+  right: 11.875vw;
+  text-align: right;
+}
+.section_art .activity .lottie_box.lottie02 {
+  margin-left: 50%;
+  transform: translate(-50%, -75%);
+}
+.section_art .activity .lottie_box.lottie02 .lottie_img {
+  border: 1px solid #2d6ceb;
+}
+.section_art .activity .lottie_box.lottie02 .lottie_text {
+  min-width: 6.875vw;
+  left: 11.875vw;
+  text-align: left;
+}
+.section_art .activity .lottie_box.lottie03 {
+  margin-top: 50%;
+  transform: translate(-50%, -60%);
+}
+.section_art .activity .lottie_box.lottie03 .lottie_img {
+  border: 1px solid #000;
+}
+.section_art .activity .lottie_box.lottie03 .lottie_text {
+  min-width: 9.375vw;
+  left: 11.875vw;
+  text-align: left;
+}
+.section_art .activity .lottie_box.lottie04 {
+  margin-left: 50%;
+}
+.section_art .activity .lottie_box.lottie04 .lottie_img {
+  border: 1px solid #000;
+}
+.section_art .activity .lottie_box.lottie04 .lottie_text {
+  min-width: 13.02083vw;
+  right: 11.875vw;
+  text-align: right;
+}
+.section_art .activity .lottie_box.lottie05 {
+  margin-left: -50%;
+  transform: translate(-50%, -30%);
+}
+.section_art .activity .lottie_box.lottie05 .lottie_img {
+  border: 1px solid #5e26fd;
+}
+.section_art .activity .lottie_box.lottie05 .lottie_text {
+  min-width: 7.91667vw;
+  left: 11.875vw;
+  text-align: left;
+}
+.section_art .activity > .lottie_box .lottie_text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.section_art .activity > .lottie_box .lottie_text > a {
+  display: block;
+  pointer-events: all;
+}
+.section_art .activity > .lottie_box .lottie_text .title {
+  color: #000;
+  font-size: 1.14583vw;
+  line-height: 1.66667vw;
+  font-weight: 800;
+  letter-spacing: -1%;
+}
+.section_art .activity > .lottie_box .lottie_text .sub {
+  display: block;
+  margin-top: 10px;
+  color: #666;
+  font-size: 0.83333vw;
+  line-height: 1.14583vw;
+  font-weight: 700;
+}
+.section_art .activity > .lottie_box .lottie_text i.arrow {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 2px;
+  background-position: -4px -192px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+}
+.section_art .circle_activity {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  width: -webkit-calc(100vw - 57.08vw);
+  width: 42.92vw;
+  max-width: 823px;
+  height: -webkit-calc(100vw - 57.08vw);
+  height: 42.92vw;
+  max-height: 823px;
+  vertical-align: middle;
+  pointer-events: none;
+}
+.section_art .circle_activity .circle {
+  transform-origin: 50% 50%;
+}
+.section_art .circle_activity .circle img {
+  width: 100%;
+  vertical-align: top;
+  height: 100%;
+}
+.section_art .visual_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.section_art .visual_text.text01 .text {
+  color: #000;
+  font-size: 3.54167vw;
+  line-height: 5vw;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+}
+.section_art .visual_text.text02 .text {
+  color: #000;
+  font-size: 2.70833vw;
+  line-height: 3.02083vw;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+}
+.section_art .visual_text.text02 .text + .text {
+  margin-top: 20px;
+}
+.section_art .visual_text.text02 .after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.section_art .visual_text.text02 .after .text {
+  color: #fff;
+}
+.section_art .visual_text.text02 .after .text + .text {
+  margin-top: 20px;
+}
+.section_art .circle_large {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.section_art .circle_large .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1960px;
+  height: 1960px;
+  margin: -980px 0 0 -980px;
+  transform-origin: 50% 50%;
+}
+.section_art .circle_large .circle img {
+  width: 100%;
+  vertical-align: top;
+  transform-origin: 50% 50%;
+}
+
+.section_art .inner .bg.black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.section_art .inner.white {
+  background: #fff;
 }/*# sourceMappingURL=style.css.map */

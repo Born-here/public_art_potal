@@ -148,7 +148,7 @@ gsap.to('.record_story.index01', {
   ease: 'none',
   scrollTrigger: {
     trigger: '.record_story.index01',
-    start: 'top 50vh',
+    start: 'top 30vh',
     end: 'top top',
     scrub: 1,
   },
@@ -189,20 +189,29 @@ gsap.to('.record_story_video3', {
 });
 
 ScrollTrigger.create({
-  trigger: '.record_story .index01',
+  trigger: '.record_ani_wrap > .space',
   start: 'top bottom',
   end: '+=1',
   onEnter: () => $('.container').addClass('story_start'),
   onEnterBack: () => $('.container').removeClass('story_start'),
   onLeaveBack: () => $('.container').removeClass('story_start'),
 });
-ScrollTrigger.create({
-  trigger: '.index03',
-  start: 'bottom top', // #art가 화면에 시작될 때
-  onEnter: () => $('.container').removeClass('story_start'), // 비디오가 사라지도록 설정
-  onEnterBack: () => $('.container').addClass('story_start'),
-  onLeaveBack: () => $('.container').addClass('story_start'),
-});
+
+// ScrollTrigger.create({
+//   trigger: '.record_story.index03',
+//   start: 'bottom top',
+//   end: '+=1',
+//   onEnter: () => $('.container').addClass('activity_start'),
+//   onEnterBack: () => $('.container').removeClass('activity_start'),
+//   onLeaveBack: () => $('.container').removeClass('activity_start'),
+// });
+// ScrollTrigger.create({
+//   trigger: '.index03',
+//   start: 'bottom ', // #art가 화면에 시작될 때
+//   onEnter: () => $('.container').removeClass('story_start'), // 비디오가 사라지도록 설정
+//   onEnterBack: () => $('.container').addClass('story_start'),
+//   onLeaveBack: () => $('.container').addClass('story_start'),
+// });
 
 // const tl = gsap.timeline();
 // tl.fromTo('.dimmed', { opacity: 1 }, { opacity: 0 });
@@ -215,19 +224,23 @@ ScrollTrigger.create({
 //   scrub: 1,
 // });
 const tl = gsap.timeline();
+
 tl.fromTo('.dimmed', { opacity: 1 }, { opacity: 0 });
 
 ScrollTrigger.create({
   animation: tl,
-  trigger: '.section_hanguel',
-  start: 'top top',
-  end: '50vh top',
+  trigger: '.circle_activity',
+  start: 'top bottom',
+  end: 'bottom top',
   scrub: 1,
 });
 
+// section 02 //
+
 //.circle 과 텍스트, 로티애니메이션 참고용
 const tl2 = gsap.timeline();
-tl2.addLabel('hanguelStart');
+tl2.addLabel('artStart');
+tl2.set('.activity.num02', { visibility: 'hidden', display: 'none' });
 tl2.to('.visual_text.text01', { opacity: 1 });
 tl2.to('.circle_activity', { opacity: 1 }, '>');
 tl2.fromTo('.visual_text.text01', { scale: 1.5 }, { scale: 1 }, '<');
@@ -242,8 +255,9 @@ tl2.to('.circle_activity .circle', { rotation: 375, duration: 1.5 }, '>1');
 tl2.to('.activity.num01', { opacity: 0 }, '<0.5');
 tl2.set('.activity.num01', { visibility: 'hidden' }, '>');
 
-tl2.set('.activity.num02', { visibility: 'visible' });
-tl2.to('.activity.num02', { opacity: 1 }, '>1');
+tl2.addLabel('secondSetStart');
+tl2.set('.activity.num02', { visibility: 'visible', display: 'block' }, 'secondSetStart');
+tl2.to('.activity.num02', { opacity: 1 }, '<');
 tl2.to('.activity.num02', { opacity: 0 }, '>1.5');
 
 tl2.to('.circle_activity .circle', { rotation: 400, scale: 0.7, duration: 6 }, '>');
@@ -254,10 +268,10 @@ tl2.to('.bg.black', { opacity: 1 }, '<0.5');
 tl2.to('.visual_text.text02 .after', { scale: 1, opacity: 1 }, '<');
 tl2.to('.visual_text.text02', { scale: 0.7, opacity: 0, duration: 3 }, '>2');
 
-tl2.set('.video_link', { visibility: 'visible' }, '<');
+tl2.set('.video_link', { visibility: 'visible', display: 'block' }, '<');
 tl2.to('.video_link', { opacity: 1, duration: 2 }, '<');
-tl2.set('.circle_activity', { opacity: 0 }, '>');
-tl2.set('.circle_large', { opacity: 0 }, '>');
+tl2.set('.circle_activity', { opacity: 0, display: 'none' }, '>');
+tl2.set('.circle_large', { opacity: 0, display: 'none' }, '>');
 tl2.to(
   '.video_link .video_dimmed',
   {
@@ -265,7 +279,7 @@ tl2.to(
   },
   '<'
 );
-tl2.addLabel('hanguelVideoStart');
+tl2.addLabel('artVideoStart');
 tl2.to(
   '.video_link .video_text .text_inner',
   {
@@ -279,7 +293,7 @@ tl2.to('.video_link .video_text .text_inner', { scale: 0.5, opacity: 0, duration
 
 ScrollTrigger.create({
   animation: tl2,
-  trigger: '.section_hanguel',
+  trigger: '.section_art',
   start: 'top top',
   end: 'bottom bottom',
   scrub: 1,
@@ -289,7 +303,7 @@ const getTimelineScrollTop = (label) => {
   const st = tl2.scrollTrigger;
 
   let labelST = tl2.labels[label];
-  if (label === 'hanguelVideoStart') {
+  if (label === 'artVideoStart') {
     labelST = labelST - 3;
   } else {
     labelST = labelST + 0.7;
@@ -302,17 +316,17 @@ const $videoLink = $('.video_link video');
 
 $(document).on('ready', () => {
   const recordST = Math.floor($('.section_record').offset().top);
-  const hanguelST = getTimelineScrollTop('hanguelStart');
-  const hanguelVideoST = getTimelineScrollTop('hanguelVideoStart');
+  const artST = getTimelineScrollTop('artStart');
+  const artVideoST = getTimelineScrollTop('artVideoStart');
   const exhibitionST = Math.floor($('.section_all_list').offset().top - 80);
 
   const searchParams = new URLSearchParams(location.search);
   const query = searchParams.get('g');
 
   if (query) {
-    const all = 'all, inlife, society, culture, knowledge';
-    const era = 'era';
-    const topic = 'topic';
+    const all = 'all, inlife, nature, abart';
+    const sort = 'sort';
+    const local = 'local';
 
     if (all.includes(query)) {
       $('.page_btn_wrap li .page_btn').removeClass('now');
@@ -357,9 +371,9 @@ $(document).on('ready', () => {
 
     if (scroll < recordST) {
       capturedNavigationIndex = 0;
-    } else if (scroll < hanguelST) {
+    } else if (scroll < artST) {
       capturedNavigationIndex = 1;
-    } else if (scroll < hanguelVideoST) {
+    } else if (scroll < artVideoST) {
       capturedNavigationIndex = 2;
     } else if (scroll < exhibitionST) {
       capturedNavigationIndex = 3;
@@ -386,10 +400,10 @@ $(document).on('ready', () => {
         scrollTarget = recordST;
         break;
       case 2:
-        scrollTarget = hanguelST;
+        scrollTarget = artST;
         break;
       case 3:
-        scrollTarget = hanguelVideoST;
+        scrollTarget = artVideoST;
         break;
       case 4:
         scrollTarget = exhibitionST;
