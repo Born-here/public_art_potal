@@ -240,14 +240,19 @@ ScrollTrigger.create({
 //.circle 과 텍스트, 로티애니메이션 참고용
 const tl2 = gsap.timeline();
 tl2.addLabel('artStart');
-tl2.set('.activity.num02', { visibility: 'hidden', display: 'none' });
-tl2.to('.visual_text.text01', { opacity: 1 });
+
+tl2.set('.bg.black', { opacity: 0 });
+tl2.set('.circle_large', { opacity: 0 });
+tl2.set('.circle_large .circle', { opacity: 0 });
+tl2.set('.visual_text.text02', { opacity: 0 });
+tl2.to('.visual_text.text01', { opacity: 0 });
 tl2.to('.circle_activity', { opacity: 1 }, '>');
 tl2.fromTo('.visual_text.text01', { scale: 1.5 }, { scale: 1 }, '<');
 tl2.fromTo('.circle_activity .circle', { rotation: 340 }, { rotation: 360 }, '>');
 tl2.to('.visual_text.text01', { scale: 0.5 }, '>');
 tl2.to('.visual_text.text01', { opacity: 0 }, '<');
 tl2.to('.visual_text.text02', { opacity: 1 }, '>');
+tl2.set('.visual_text.text02 .after', { opacity: 0 }, '<');
 
 tl2.set('.activity.num01', { visibility: 'visible' }, '>');
 tl2.to('.activity.num01', { opacity: 1 }, '<');
@@ -255,18 +260,22 @@ tl2.to('.circle_activity .circle', { rotation: 375, duration: 1.5 }, '>1');
 tl2.to('.activity.num01', { opacity: 0 }, '<0.5');
 tl2.set('.activity.num01', { visibility: 'hidden' }, '>');
 
-tl2.addLabel('secondSetStart');
-tl2.set('.activity.num02', { visibility: 'visible', display: 'block' }, 'secondSetStart');
-tl2.to('.activity.num02', { opacity: 1 }, '<');
+tl2.set('.activity.num02', { visibility: 'visible' });
+tl2.to('.activity.num02', { opacity: 1 }, '>1');
 tl2.to('.activity.num02', { opacity: 0 }, '>1.5');
 
 tl2.to('.circle_activity .circle', { rotation: 400, scale: 0.7, duration: 6 }, '>');
 tl2.to('.visual_text.text02 .before', { opacity: 0 }, '<');
-tl2.to('.circle_large', { opacity: 1 }, '<');
-tl2.to('.circle_large .circle', { scale: 1.1, rotation: 30, duration: 8 }, '<');
+tl2.fromTo('.circle_large', { opacity: 0 }, { opacity: 1 }, '<');
+tl2.fromTo(
+  '.circle_large .circle',
+  { opacity: 0, scale: 0 },
+  { opacity: 1, scale: 1.7, rotation: 30, duration: 8 },
+  '<'
+);
 tl2.to('.bg.black', { opacity: 1 }, '<0.5');
 tl2.to('.visual_text.text02 .after', { scale: 1, opacity: 1 }, '<');
-tl2.to('.visual_text.text02', { scale: 0.7, opacity: 0, duration: 3 }, '>2');
+tl2.to('.visual_text.text02', { scale: 0.7, opacity: 0, duration: 4 }, '>2');
 
 tl2.set('.video_link', { visibility: 'visible', display: 'block' }, '<');
 tl2.to('.video_link', { opacity: 1, duration: 2 }, '<');
@@ -325,8 +334,8 @@ $(document).on('ready', () => {
 
   if (query) {
     const all = 'all, inlife, nature, abart';
-    const sort = 'sort';
-    const local = 'local';
+    // const sort = 'sort';
+    // const local = 'local';
 
     if (all.includes(query)) {
       $('.page_btn_wrap li .page_btn').removeClass('now');
