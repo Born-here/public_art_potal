@@ -1913,14 +1913,14 @@ div {
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
-.section_art .video_link .video_dimmed video {
+.section_art .video_link .video_dimmed .iframe_colorful {
   width: 100%;
   min-width: 100%;
   height: 100%;
   min-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  pointer-events: none;
 }
 .section_art .video_link .video_text {
   position: absolute;
